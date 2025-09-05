@@ -1,3 +1,4 @@
+// Quotes and Songs based on mood
 const quotes = {
   happy: [
     "Joy looks good on you, wear it often.",
@@ -99,33 +100,84 @@ const songs = {
   ]
 };
 
+// DOM Elements
 const moodInput = document.getElementById("moodInput");
 const submitBtn = document.getElementById("submitMood");
 const quoteText = document.getElementById("quoteText");
 const songText = document.getElementById("songText");
 const responseBox = document.getElementById("response");
 const nextBtn = document.getElementById("nextBtn");
+const rainContainer = document.getElementById("rain-container");
 
+let rainInterval;
+
+// Mood Submit Handler
 submitBtn.addEventListener("click", handleMood);
+
+// Reset Button Handler
 nextBtn.addEventListener("click", () => {
   moodInput.value = "";
   responseBox.classList.add("hidden");
   document.body.className = "";
+  stopRain(); // ⛅ stop rain when resetting
 });
 
+// Main Function
 function handleMood() {
   const mood = moodInput.value.trim().toLowerCase();
+
   if (quotes[mood] && songs[mood]) {
     const quote = quotes[mood][Math.floor(Math.random() * quotes[mood].length)];
     const song = songs[mood][Math.floor(Math.random() * songs[mood].length)];
+
     quoteText.textContent = `💬 Quote: "${quote}"`;
     songText.textContent = `🎵 Suggested Song: ${song}`;
     responseBox.classList.remove("hidden");
     document.body.className = mood;
+
+    // 🌧️ Trigger rain for "sad" mood
+    if (mood === "sad") {
+      startRain();
+    } else {
+      stopRain();
+    }
   } else {
     quoteText.textContent = "❌ Mood not recognized. Try: happy, sad, angry, stressed, or unmotivated.";
     songText.textContent = "";
     responseBox.classList.remove("hidden");
     document.body.className = "";
+    stopRain();
   }
 }
+
+// Rain Animation Functions
+function createRaindrop() {
+  const drop = document.createElement("div");
+  drop.classList.add("raindrop");
+
+  drop.style.left = Math.random() * window.innerWidth + "px";
+  const duration = Math.random() * 1 + 1; // 1s to 2s
+  const delay = Math.random() * 2;
+
+  drop.style.animationDuration = duration + "s";
+  drop.style.animationDelay = delay + "s";
+
+  rainContainer.appendChild(drop);
+
+  setTimeout(() => {
+    drop.remove();
+  }, (duration + delay) * 1000);
+}
+
+function startRain() {
+  if (!rainInterval) {
+    rainInterval = setInterval(createRaindrop, 100);
+  }
+}
+
+function stopRain() {
+  clearInterval(rainInterval);
+  rainInterval = null;
+  rainContainer.innerHTML = "";
+}
+
