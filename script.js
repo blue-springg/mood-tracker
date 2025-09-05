@@ -111,18 +111,11 @@ const rainContainer = document.getElementById("rain-container");
 
 let rainInterval;
 
-// Mood Submit Handler
+// Submit mood
 submitBtn.addEventListener("click", handleMood);
+nextBtn.addEventListener("click", resetMood);
 
-// Reset Button Handler
-nextBtn.addEventListener("click", () => {
-  moodInput.value = "";
-  responseBox.classList.add("hidden");
-  document.body.className = "";
-  stopRain(); // ⛅ stop rain when resetting
-});
-
-// Main Function
+// Handle mood input
 function handleMood() {
   const mood = moodInput.value.trim().toLowerCase();
 
@@ -135,7 +128,6 @@ function handleMood() {
     responseBox.classList.remove("hidden");
     document.body.className = mood;
 
-    // 🌧️ Trigger rain for "sad" mood
     if (mood === "sad") {
       startRain();
     } else {
@@ -150,13 +142,21 @@ function handleMood() {
   }
 }
 
-// Rain Animation Functions
+// Reset button
+function resetMood() {
+  moodInput.value = "";
+  responseBox.classList.add("hidden");
+  document.body.className = "";
+  stopRain();
+}
+
+// Rain functions
 function createRaindrop() {
   const drop = document.createElement("div");
   drop.classList.add("raindrop");
 
   drop.style.left = Math.random() * window.innerWidth + "px";
-  const duration = Math.random() * 1 + 1; // 1s to 2s
+  const duration = Math.random() * 1 + 1;
   const delay = Math.random() * 2;
 
   drop.style.animationDuration = duration + "s";
@@ -170,14 +170,15 @@ function createRaindrop() {
 }
 
 function startRain() {
+  console.log("🌧️ Starting rain...");
   if (!rainInterval) {
     rainInterval = setInterval(createRaindrop, 100);
   }
 }
 
 function stopRain() {
+  console.log("☀️ Stopping rain...");
   clearInterval(rainInterval);
   rainInterval = null;
   rainContainer.innerHTML = "";
 }
-
