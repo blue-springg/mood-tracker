@@ -1,46 +1,90 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: "Segoe UI", sans-serif;
-  background-color: #fff;
-  color: #333;
-  transition: background 1s;
-  overflow: hidden;
+  transition: background 1s ease;
 }
 
-.container {
-  max-width: 600px;
-  margin: 50px auto;
+.chat-container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #ffffffcc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
   text-align: center;
-  padding: 30px;
+  color: #333;
+  margin-bottom: 15px;
 }
 
-input, button {
+.chat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message {
+  background: #f1f1f1;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+.bot {
+  background-color: #e6e6fa;
+  align-self: flex-start;
+}
+
+input[type="text"] {
   padding: 10px;
-  margin: 10px;
   font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  background: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #584ee0;
 }
 
 .hidden {
   display: none;
 }
 
-/* Background mood classes */
-.happy {
+/* Mood background colors */
+body.happy {
   background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
 }
 
-.sad {
-  background: linear-gradient(to bottom, #cce0ff, #aaccff);
+body.sad {
+  background: linear-gradient(to bottom, #d0e7ff, #a6c9ff);
 }
 
-.angry {
-  background: linear-gradient(to bottom, #550000, #990000);
+body.angry {
+  background: linear-gradient(to bottom, #660000, #990000);
+  color: white;
 }
 
-.stressed {
-  background: linear-gradient(to bottom, #e6ccff, #f3e6ff);
+body.stressed {
+  background: linear-gradient(to bottom, #f2e6ff, #e0ccff);
 }
 
-.unmotivated {
-  background: linear-gradient(to bottom, #f5deb3, #fff5e1);
+body.unmotivated {
+  background: linear-gradient(to bottom, #f5f5dc, #fff8e1);
 }
+
