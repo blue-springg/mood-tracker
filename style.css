@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   margin: 0;
   padding: 0;
@@ -13,6 +14,8 @@ body {
   border-radius: 10px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
+  z-index: 10;
+  position: relative;
 }
 
 h1 {
@@ -66,6 +69,7 @@ button:hover {
   display: none;
 }
 
+/* Rain container */
 #rain-container {
   position: fixed;
   top: 0;
@@ -74,14 +78,14 @@ button:hover {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 0;
+  z-index: 9999; /* Ensure it's above everything */
 }
 
 .raindrop {
   position: absolute;
   width: 2px;
-  height: 12px;
-  background: rgba(173, 216, 230, 0.4); /* Light blue */
+  height: 15px;
+  background: rgba(173, 216, 230, 0.5);
   animation: fall linear;
   border-radius: 1px;
 }
@@ -100,14 +104,13 @@ button:hover {
   }
 }
 
-
 /* Mood background colors */
 body.happy {
   background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
 }
 
 body.sad {
-  background: linear-gradient(to bottom, #d0e7ff, #a6c9ff);
+  background: linear-gradient(to bottom, #a9c9ff, #d0e7ff);
 }
 
 body.angry {
@@ -122,4 +125,3 @@ body.stressed {
 body.unmotivated {
   background: linear-gradient(to bottom, #f5f5dc, #fff8e1);
 }
-
