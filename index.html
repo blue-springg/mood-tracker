@@ -7,16 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="chat-container" id="app">
     <h1>Mood Tracker 🌸</h1>
-    <div id="chat">
-      <p>Hi, how are you feeling today?</p>
-      <input type="text" id="moodInput" placeholder="Type your mood (happy, sad...)" />
-      <button id="submitMood">Get Quote</button>
-    </div>
-    <div id="response" class="hidden">
-      <p id="quoteText"></p>
-      <button id="nextBtn">Try another mood</button>
+    <div class="chat-box">
+      <div class="chat-message bot">Hi there! How are you feeling today? 😊<br>Type your mood: <em>happy</em>, <em>sad</em>, <em>stressed</em>, <em>angry</em>, or <em>unmotivated</em>.</div>
+      <input type="text" id="moodInput" placeholder="Type your mood..." autocomplete="off"/>
+      <button id="submitMood">Send</button>
+      <div id="response" class="hidden">
+        <div class="chat-message bot" id="quoteText"></div>
+        <div class="chat-message bot" id="songText"></div>
+        <button id="nextBtn">Try another mood</button>
+      </div>
     </div>
   </div>
 
