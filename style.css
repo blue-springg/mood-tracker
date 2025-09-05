@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #333;
+  transition: background 1s;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 30px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 1em;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Background mood classes */
+.happy {
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+}
+
+.sad {
+  background: linear-gradient(to bottom, #cce0ff, #aaccff);
+}
+
+.angry {
+  background: linear-gradient(to bottom, #550000, #990000);
+}
+
+.stressed {
+  background: linear-gradient(to bottom, #e6ccff, #f3e6ff);
+}
+
+.unmotivated {
+  background: linear-gradient(to bottom, #f5deb3, #fff5e1);
+}
