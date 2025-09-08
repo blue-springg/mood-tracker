@@ -1,127 +1,253 @@
-/* Base styles */
-body {
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap');
+
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", sans-serif;
-  transition: background 1s ease;
+  box-sizing: border-box;
 }
 
-.chat-container {
-  max-width: 400px;
-  margin: 40px auto;
-  background: #ffffffcc;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  z-index: 10;
-  position: relative;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.chat-box {
+/* Subtle diagonal background fade */
+body {
+  background: linear-gradient(to bottom right, #ffffff 60%, #111111);
+  color: #000;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background 1s ease-in-out;
 }
 
-.chat-message {
-  background: #f1f1f1;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  max-width: 100%;
-}
 
-.bot {
-  background-color: #e6e6fa;
-  align-self: flex-start;
-}
-
-input[type="text"] {
-  padding: 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 1em;
-  border: none;
-  background: #6c63ff;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #584ee0;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Rain container */
-#rain-container {
+/* Splash screen */
+#splash {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 9999; /* Ensure it's above everything */
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  z-index: 9999;
+  animation: fadeOut 2s ease 1s forwards;
 }
 
-.raindrop {
-  position: absolute;
-  width: 2px;
-  height: 15px;
-  background: rgba(173, 216, 230, 0.5);
-  animation: fall linear;
-  border-radius: 1px;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(-100px);
+@keyframes fadeOut {
+  to {
     opacity: 0;
+    visibility: hidden;
   }
-  30% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(100vh);
+}
+
+/* Navigation */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #ccc;
+}
+
+.top-nav .nav-left {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #444;
+}
+
+.top-nav .nav-right {
+  display: flex;
+  gap: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #444;
+}
+
+.top-nav .nav-right a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.top-nav .nav-right a:hover {
+  color: #007acc;
+}
+
+/* Layout */
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+#about {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+#about .intro-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#about .intro-text h1 span {
+  font-size: 2rem;
+  display: block;
+  margin-top: 10px;
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
+#about .intro-text p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #333;
+}
+
+.right-sections {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section {
+  display: none;
+  scroll-margin-top: 80px;
+}
+
+section.visible-section {
+  display: block;
+}
+
+section.animated-section {
+  animation: slideUpFade 0.6s ease both;
+}
+
+@keyframes slideUpFade {
+  from {
     opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Mood background colors */
-body.happy {
-  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+/* Headings */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-body.sad {
-  background: linear-gradient(to bottom, #a9c9ff, #d0e7ff);
+/* Footer */
+footer {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
 }
 
-body.angry {
-  background: linear-gradient(to bottom, #660000, #990000);
-  color: white;
+footer a {
+  text-decoration: none;
+  color: #000;
+  margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
-body.stressed {
-  background: linear-gradient(to bottom, #f2e6ff, #e0ccff);
+footer a:hover {
+  color: #007acc;
 }
 
-body.unmotivated {
-  background: linear-gradient(to bottom, #f5f5dc, #fff8e1);
+footer i {
+  margin-right: 5px;
+}
+
+/* Night Mode */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+/* Adjust top nav for night mode */
+body.dark-mode .top-nav {
+  background-color: #1f1f1f;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .top-nav .nav-right a,
+body.dark-mode .top-nav .nav-left {
+  color: #ddd;
+}
+
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  border-top: 1px solid #444;
+}
+
+body.dark-mode footer a {
+  color: #ccc;
+}
+
+/* Moon Button Styling */
+#toggle-night-mode {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode #toggle-night-mode {
+  color: #f1f1f1;
 }
