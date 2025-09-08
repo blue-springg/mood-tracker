@@ -121,10 +121,12 @@ body {
 #about .intro-text p {
   margin-top: 16px;
   font-size: 1.1rem;
-  line-height: 1.8;
-  column-count: 2;
-  column-gap: 40px;
+  text-align: left;
+  max-width: 100%;    /* Allow full width */
+  width: 100%;        /* Stretch across container */
+  line-height: 1.8;   /* Better spacing for readability */
 }
+
 
 .right-sections {
   flex: 2;
