@@ -1,21 +1,47 @@
-<script>
-  // Night Mode Toggle Button
-  const toggleBtn = document.getElementById('toggle-night-mode');
+// Splash screen fade out
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('splash').style.opacity = '0';
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
+    }, 1000);
+  }, 2000);
+});
 
-  // Load night mode from localStorage if it was enabled before
-  if (localStorage.getItem('nightMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-  }
+// Section toggle
+const navLinks = document.querySelectorAll('.top-nav .nav-right a');
+const sections = document.querySelectorAll('section');
 
-  // Toggle dark mode on click
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
+navLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
 
-    // Save the mode
-    if (document.body.classList.contains('dark-mode')) {
-      localStorage.setItem('nightMode', 'enabled');
-    } else {
-      localStorage.setItem('nightMode', 'disabled');
-    }
+    sections.forEach(sec => {
+      if (sec.id === targetId) {
+        sec.classList.add('visible-section', 'animated-section');
+        sec.setAttribute('tabindex', '0');
+        sec.focus();
+      } else {
+        sec.classList.remove('visible-section', 'animated-section');
+        sec.setAttribute('tabindex', '-1');
+      }
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script>
+});
+
+// Night mode toggle
+const toggleBtn = document.getElementById('toggle-night-mode');
+
+if (localStorage.getItem('nightMode') === 'enabled') {
+  document.body.classList.add('dark-mode');
+}
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('nightMode',
+    document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+});
