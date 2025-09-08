@@ -120,8 +120,10 @@ body {
 
 #about .intro-text p {
   margin-top: 16px;
-  font-size: 1rem;
-  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  column-count: 2;
+  column-gap: 40px;
 }
 
 .right-sections {
