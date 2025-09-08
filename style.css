@@ -101,7 +101,6 @@ body {
   margin-left: 40px;
 }
 
-
 #about .intro-text h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.9rem;
@@ -124,9 +123,8 @@ body {
   max-width: none;
 }
 
-
 .right-sections {
-  flex: 2; /* Previously was 2 — make this smaller */
+  flex: 2;
 }
 
 section {
@@ -248,28 +246,57 @@ body.dark-mode #toggle-night-mode {
 /* Responsive Design - Media Queries */
 /* ---------------------------------- */
 
+/* Tablets and small laptops (portrait tablets, 768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .main-layout {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 40px;
+  }
+
+  #about {
+    margin-left: 0;
+    padding: 0 30px;
+  }
+
+  .right-sections {
+    padding: 0 30px;
+    margin-top: 30px;
+  }
+
+  .top-nav {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 25px;
+  }
+
+  #about .intro-text p {
+    width: 100%;
+  }
+
+  .skills-grid {
+    justify-content: center;
+  }
+}
+
+/* Mobile devices (phones and small screens) */
 @media (max-width: 768px) {
-  /* Stack layout vertically */
   .main-layout {
     flex-direction: column;
     gap: 30px;
     padding: 20px;
   }
 
-  /* About section spacing for mobile */
   #about {
     margin-left: 0;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
   }
 
-  /* Right sections spacing */
   .right-sections {
     margin-top: 20px;
     padding: 0 20px;
   }
 
-  /* Navigation bar responsiveness */
   .top-nav {
     flex-direction: column;
     align-items: flex-start;
@@ -282,7 +309,6 @@ body.dark-mode #toggle-night-mode {
     gap: 10px;
   }
 
-  /* Responsive skills */
   .skills-grid {
     justify-content: center;
   }
@@ -291,7 +317,6 @@ body.dark-mode #toggle-night-mode {
     width: 80px;
   }
 
-  /* Heading and paragraph sizing */
   h2 {
     font-size: 1.2rem;
   }
@@ -311,5 +336,46 @@ body.dark-mode #toggle-night-mode {
   footer {
     padding: 10px;
     font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (phones ≤ 480px) */
+@media (max-width: 480px) {
+  .top-nav .nav-left {
+    font-size: 0.9rem;
+  }
+
+  .top-nav .nav-right {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 0.9rem;
+  }
+
+  #about .intro-text h1 {
+    font-size: 1.2rem;
+  }
+
+  #about .intro-text h1 span {
+    font-size: 0.9rem;
+  }
+
+  #about .intro-text p {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .skill {
+    width: 70px;
+    font-size: 0.8rem;
+  }
+
+  .skill img {
+    width: 50px;
+    height: 50px;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 8px;
   }
 }
