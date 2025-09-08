@@ -104,14 +104,14 @@ body {
 
 #about .intro-text h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: left;
 }
 
 #about .intro-text h1 span {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   display: block;
   margin-top: 10px;
   text-transform: none;
