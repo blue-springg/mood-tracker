@@ -2,31 +2,439 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mood Tracker</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haniyeh Parsa | Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background diagonal split */
+    body {
+      background-color: #ffffff;
+      color: #000;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Splash Screen */
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      z-index: 9999;
+      animation: fadeOut 2s ease 1s forwards;
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+
+    /* Left side: MY PORTFOLIO */
+    .top-nav .nav-left {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: #444;
+      cursor: default;
+      user-select: none;
+    }
+
+    /* Right side: Menu links */
+    .top-nav .nav-right {
+      display: flex;
+      gap: 25px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .top-nav .nav-right a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .top-nav .nav-right a:hover {
+      color: #007acc;
+    }
+
+    /* Main Layout */
+    .main-layout {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex: 1;
+    }
+
+#about {
+  flex: 1.5;
+  min-width: 500px;
+  max-width: 700px;
+}
+
+    .right-sections {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+      display: none;
+    }
+
+    section.visible-section {
+      display: block;
+    }
+
+    section.animated-section {
+      animation: slideUpFade 0.6s ease both;
+    }
+
+    @keyframes slideUpFade {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+#about .intro-text h1 {
+  font-size: 2rem;
+}
+
+#about .intro-text h1 span {
+  font-size: 1.5rem;
+}
+
+
+    #about .intro-text h1 span {
+      font-size: 2rem;
+      display: block;
+      margin-top: 10px;
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+
+    #about .intro-text p {
+  margin-top: 25px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+
+    /* Headings */
+    h2 {
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .project, .experience-item {
+      margin-bottom: 20px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .skill {
+      text-align: center;
+      width: 100px;
+      font-size: 0.9rem;
+    }
+
+    .skill img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 6px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f9f9f9;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      border-top: 1px solid #ddd;
+      color: #000;
+    }
+
+    footer a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: #333;
+    }
+
+    footer i {
+      margin-right: 6px;
+    }
+
+  </style>
 </head>
+
 <body>
-  <div class="chat-container" id="app">
-    <h1>Mood Tracker 🌸</h1>
-    <div class="chat-box">
-      <div class="chat-message bot">
-        Hi there! How are you feeling today? 😊<br>
-        Type your mood: <em>happy</em>, <em>sad</em>, <em>stressed</em>, <em>angry</em>, or <em>unmotivated</em>.
+  <!-- Splash Screen -->
+  <div id="splash">WELCOME TO MY PORTFOLIO</div>
+
+  <!-- Navigation Bar -->
+  <nav class="top-nav" aria-label="Main Navigation">
+<div class="nav-left">
+  MY PORTFOLIO
+  <button id="toggle-night-mode" aria-label="Toggle night mode">🌙</button>
+</div>
+    <div class="nav-right">
+      <a href="#about">ABOUT ME</a>
+      <a href="#experience">EXPERIENCE</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#cv">CV</a>
+      <a href="#projects">PROJECTS</a>
+    </div>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- About Me Section -->
+    <section id="about" class="visible-section" tabindex="0" aria-label="About Me">
+      <div class="intro-text">
+        <h1>
+          Hello,<br />
+          <span>My name is Haniyeh Parsa, and I’m an aspiring computer science student with a strong passion for learning and personal growth.</span>
+        </h1>
+        <p>
+          Over the past year, I’ve dedicated myself to improving my skills, exploring different areas of computer science, and challenging myself through self-directed projects.
+          </p>
+           <p>
+          I enjoy learning new things, but what drives me even more is the process of growing — pushing my limits, solving problems, and seeing real progress over time.
+          </p>
+        <p>
+          This portfolio reflects that journey, and I’m excited to continue learning, take on new challenges, and grow even further in a university environment.
+        </p>
+
       </div>
-      <input type="text" id="moodInput" placeholder="Type your mood..." autocomplete="off"/>
-      <button id="submitMood">Send</button>
-      <div id="response" class="hidden">
-        <div class="chat-message bot" id="quoteText"></div>
-        <div class="chat-message bot" id="songText"></div>
-        <button id="nextBtn">Try another mood</button>
-      </div>
+    </section>
+
+    <!-- Right Sections -->
+    <div class="right-sections">
+      <!-- Experience Section -->
+      <section id="experience" tabindex="0" aria-label="Experience">
+        <h2>Experience</h2>
+
+        <div class="experience-item">
+          <h3>English Teacher & Private Tutor</h3>
+          <p>Taught English to students of all ages. Helped them plan studies and improve academic performance.</p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Volunteer – School Dental Program</h3>
+          <p>Assisted in varnishing teeth and promoting hygiene during school visits.</p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Café Work</h3>
+          <p>Worked short-term in a café, gaining communication and multitasking experience.</p>
+        </div>
+
+        <div class="experience-item">
+          <h3>Language & Personal Growth</h3>
+          <ul>
+            <li>Scored 6.5 in IELTS after one month of study</li>
+            <li>Took TOPIK exam in Turkey and scored 111; aiming for Level 3</li>
+            <li>Traveled solo to Turkey for the exam – a personal milestone</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" tabindex="0" aria-label="Skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            <p>Python</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+            <p>HTML</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+            <p>CSS</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+            <p>SQL (Basic)</p>
+          </div>
+          <div class="skill">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" alt="Excel" />
+            <p>Excel</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CV Section -->
+<section id="cv" tabindex="0" aria-label="CV">
+  <h2>CV</h2>
+  <ol>
+    <li><a href="certificates/Machine%20Learning.pdf" target="_blank">Machine Learning – Stanford University (Coursera)</a></li>
+    <li><a href="certificates/Python%20for%20Everybody.pdf" target="_blank">Python for Everybody – University of Michigan (Coursera)</a></li>
+    <li><a href="certificates/Web%20Design%20for%20Everybody.pdf" target="_blank">Web Design for Everybody: Basics of Web Development &amp; Coding – University of Michigan (Coursera)</a></li>
+    <li><a href="certificates/Google%20Analytics%20Certification.pdf" target="_blank">Google Analytics Certification – Google</a></li>
+    <li><a href="certificates/Conversion%20Optimization%20Certification.pdf" target="_blank">Conversion Optimization Certification – Google</a></li>
+    <li><a href="certificates/Introduction%20to%20Cybersecurity.pdf" target="_blank">Introduction to Cybersecurity – Cisco Networking Academy</a></li>
+    <li><a href="certificates/Elements%20of%20AI.png" target="_blank">Elements of AI – University of Helsinki</a></li>
+    <li><a href="certificates/Build%20a%20Free%20Website%20with%20WordPress.pdf" target="_blank">Build a Free Website with WordPress – Coursera Project</a></li>
+    <li><a href="certificates/Getting%20Started%20with%20Microsoft%20Excel.pdf" target="_blank">Getting Started with Microsoft Excel – Coursera Project Network</a></li>
+  </ol>
+</section>
+
+      
+      <!-- Projects Section -->
+      <section id="projects" tabindex="0" aria-label="Projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+          <h3>Parrot’s Night Scape</h3>
+          <p>A simple flying game made with Scratch and JavaScript. Press space to keep the parrot flying and avoid obstacles.</p>
+          <a href="https://scratch.mit.edu/projects/1103240101/" target="_blank" rel="noopener noreferrer">Play Game</a>
+        </div>
+
+        <div class="project">
+          <h3>The First Forest – Fan Page</h3>
+          <p>A fan website for a Chinese drama built using HTML and CSS as a course project.</p>
+          <a href="https://blue-springg.github.io/the-first-forest/" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+
+        <div class="project">
+          <h3>Mood Booster App (Python)</h3>
+          <p>A motivational quote and music recommender built with Python. Select a mood (Happy, Sad, Angry, Stressed, Unmotivated), and get personalized quotes and music suggestions.</p>
+          <ul>
+            <li><a href="https://colab.research.google.com/drive/1tILdMOqUn_TRbn66jHTo0HGMu5fG9KMU?usp=sharing" target="_blank" rel="noopener noreferrer">Try it live on Google Colab</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">View the code on GitHub</a></li> <!-- Replace # with your repo link -->
+          </ul>
+        </div>
+      </section>
     </div>
   </div>
 
-  <!-- Rain Container -->
-  <div id="rain-container"></div>
+  <!-- Footer Contact -->
+  <footer>
+    <a href="mailto:haniye.parsa933@gmail.com"><i class="fas fa-envelope"></i>haniye.parsa933@gmail.com</a> |
+    <a href="https://wa.me/989331202352" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i>WhatsApp</a> |
+    <a href="https://t.me/haniye_parsa" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i>Telegram</a>
+  </footer>
 
-  <script src="script.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    // Splash
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('splash').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('splash').style.display = 'none';
+        }, 1000);
+      }, 2000);
+    });
+
+    // Nav links
+    const navLinks = document.querySelectorAll('.top-nav .nav-right a');
+    const sections = document.querySelectorAll('section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        // Show clicked section, hide others
+        sections.forEach(sec => {
+          if (sec.id === targetId) {
+            sec.classList.add('visible-section', 'animated-section');
+            sec.setAttribute('tabindex', '0');
+            sec.focus();
+          } else {
+            sec.classList.remove('visible-section', 'animated-section');
+            sec.setAttribute('tabindex', '-1');
+          }
+        });
+
+        // Smooth scroll to top of main layout container to see section
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+  </script>
 </body>
 </html>
