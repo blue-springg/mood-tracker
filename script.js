@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
 });
 
 // Section toggle
-const navLinks = document.querySelectorAll('.top-nav .nav-right a');
+const navLinks = document.querySelectorAll('.sidebar a'); // ← updated here
 const sections = document.querySelectorAll('section');
 
 navLinks.forEach(link => {
@@ -29,7 +29,7 @@ navLinks.forEach(link => {
       }
     });
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    targetSection.scrollIntoView({ behavior: 'smooth' }); // ← updated here
   });
 });
 
@@ -45,3 +45,4 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('nightMode',
     document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
 });
+
