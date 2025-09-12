@@ -17,6 +17,7 @@ body {
   transition: background 1s ease-in-out;
 }
 
+/* Splash screen animation */
 #splash {
   position: fixed;
   top: 0;
@@ -42,6 +43,7 @@ body {
   }
 }
 
+/* Top navigation */
 .top-nav {
   display: flex;
   justify-content: space-between;
@@ -84,6 +86,7 @@ body {
   color: #007acc;
 }
 
+/* Main layout */
 .main-layout {
   display: flex;
   justify-content: space-between;
@@ -92,12 +95,13 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   flex: 1;
+  margin-left: 200px; /* Space for sidebar */
 }
 
+/* About section */
 #about {
-  flex: 3; 
+  flex: 3;
   min-width: 100px;
-  max-width: none; 
   margin-left: 40px;
 }
 
@@ -119,17 +123,22 @@ body {
 }
 
 #about .intro-text p {
-  width: 70vw; /* vw = 70% of the viewport width */
+  width: 70vw;
   max-width: none;
 }
 
+/* Right sections */
 .right-sections {
   flex: 2;
 }
 
+/* Section visibility */
 section {
   display: none;
   scroll-margin-top: 80px;
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
 }
 
 section.visible-section {
@@ -151,6 +160,7 @@ section.animated-section {
   }
 }
 
+/* Skills */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -169,6 +179,7 @@ section.animated-section {
   margin-bottom: 6px;
 }
 
+/* Headings */
 h2 {
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
@@ -178,6 +189,7 @@ h2 {
   letter-spacing: 1px;
 }
 
+/* Footer */
 footer {
   background-color: #f9f9f9;
   padding: 15px 20px;
@@ -202,7 +214,7 @@ footer i {
   margin-right: 5px;
 }
 
-/* Night Mode */
+/* Dark Mode */
 body.dark-mode {
   background: #121212;
   color: #f1f1f1;
@@ -242,16 +254,67 @@ body.dark-mode #toggle-night-mode {
   color: #f1f1f1;
 }
 
-/* ---------------------------------- */
-/* Responsive Design - Media Queries */
-/* ---------------------------------- */
+/* ------------------------------ */
+/* Sidebar with Centered Content */
+/* ------------------------------ */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100% - 60px);
+  width: 200px;
+  background-color: #f5f5f5;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* ✅ Center links horizontally */
+  justify-content: flex-start;
+  text-align: center;      /* ✅ Center text inside links */
+  gap: 20px;
+  padding: 30px 15px;
+  z-index: 999;
+}
 
-/* Tablets and small laptops (portrait tablets, 768px - 1024px) */
+.sidebar a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  width: 100%;
+}
+
+.sidebar a:hover {
+  color: #007acc;
+}
+
+/* Dark mode for sidebar */
+body.dark-mode .sidebar {
+  background-color: #1f1f1f;
+  border-right: 1px solid #444;
+}
+
+body.dark-mode .sidebar a {
+  color: #ddd;
+}
+
+body.dark-mode .sidebar a:hover {
+  color: #66b2ff;
+}
+
+/* ------------------------------ */
+/* Responsive Design */
+/* ------------------------------ */
+
+/* Tablets and small laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
   .main-layout {
     flex-direction: column;
     gap: 30px;
     padding: 30px 40px;
+    margin-left: 200px;
   }
 
   #about {
@@ -279,12 +342,36 @@ body.dark-mode #toggle-night-mode {
   }
 }
 
-/* Mobile devices (phones and small screens) */
+/* Mobile devices */
 @media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;   /* ✅ Center links on mobile */
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+
+  .sidebar a {
+    margin-right: 15px;
+    font-size: 0.9rem;
+    width: auto;
+  }
+
   .main-layout {
+    margin-left: 0;
     flex-direction: column;
     gap: 30px;
     padding: 20px;
+    padding-top: 80px;
   }
 
   #about {
@@ -339,7 +426,7 @@ body.dark-mode #toggle-night-mode {
   }
 }
 
-/* Extra small screens (phones ≤ 480px) */
+/* Extra small screens */
 @media (max-width: 480px) {
   .top-nav .nav-left {
     font-size: 0.9rem;
@@ -379,90 +466,3 @@ body.dark-mode #toggle-night-mode {
     padding: 8px;
   }
 }
-
-.sidebar {
-  position: fixed;
-  top: 60px; /* height of top-nav */
-  left: 0;
-  height: calc(100% - 60px);
-  width: 200px;
-  background-color: #f5f5f5;
-  border-right: 1px solid #ccc;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 30px 15px;
-  z-index: 999;
-}
-
-.sidebar a {
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #444;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.sidebar a:hover {
-  color: #007acc;
-}
-
-/* Adjust layout to make room for sidebar */
-.main-layout {
-  margin-left: 200px; /* Same as sidebar width */
-}
-
-/* Responsive: collapse sidebar on mobile */
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 15px;
-    background-color: #f5f5f5;
-  }
-
-  .sidebar a {
-    margin-right: 15px;
-    font-size: 0.9rem;
-  }
-
-  .main-layout {
-    margin-left: 0;
-    padding-top: 20px;
-  }
-}
-
-/* Dark mode support for sidebar */
-body.dark-mode .sidebar {
-  background-color: #1f1f1f;
-  border-right: 1px solid #444;
-}
-
-body.dark-mode .sidebar a {
-  color: #ddd;
-}
-
-body.dark-mode .sidebar a:hover {
-  color: #66b2ff;
-}
-section {
-  display: none;
-  scroll-margin-top: 80px;
-  max-width: 900px;
-  margin: 0 auto 60px auto; /* Center it */
-  padding: 0 20px; /* Add breathing room on mobile */
-}
-
-section.visible-section {
-  display: block;
-}
-
