@@ -125,12 +125,12 @@ section.animated-section {
 
 .skill {
   text-align: center;
-  width: 100px;
+  width: 120px; /* Increased to accommodate larger icons */
   font-size: 0.9rem;
 }
 
 .skill i {
-  font-size: 2.5rem; /* Larger for visibility */
+  font-size: 3.5rem; /* Larger for better visibility */
   margin-bottom: 8px;
   color: #000; /* Solid black in light mode */
 }
@@ -321,6 +321,10 @@ body.dark-mode .sidebar a.active {
   .skills-grid {
     justify-content: center;
   }
+
+  .skill {
+    width: 100px; /* Smaller to fit tablet screens */
+  }
 }
 
 /* Mobile devices */
@@ -410,11 +414,11 @@ body.dark-mode .sidebar a.active {
   }
 
   .skill {
-    width: 90px;
+    width: 100px; /* Adjusted for larger icons */
   }
 
   .skill i {
-    font-size: 2rem; /* Slightly smaller for mobile */
+    font-size: 3rem; /* Larger for mobile visibility */
   }
 
   h2 {
@@ -454,12 +458,12 @@ body.dark-mode .sidebar a.active {
   }
 
   .skill {
-    width: 80px;
+    width: 90px;
     font-size: 0.85rem;
   }
 
   .skill i {
-    font-size: 1.8rem;
+    font-size: 2.5rem; /* Slightly smaller for very small screens */
   }
 
   footer {
