@@ -46,13 +46,13 @@ body {
   padding: 40px 30px;
   max-width: 1400px;
   margin: 0 auto;
-  margin-left: 200px; /* Increased to ensure no overlap with sidebar */
+  margin-left: 200px; /* Space for sidebar */
 }
 
 /* About section */
 #about {
-  max-width: 1000px; /* Wide for more screen space */
-  margin: 40px 0; /* No left margin to avoid shifting under sidebar */
+  max-width: 1000px;
+  margin: 40px 0;
   padding-left: 220px; /* Offset to clear sidebar */
   padding-right: 20px;
 }
@@ -129,16 +129,14 @@ section.animated-section {
   font-size: 0.9rem;
 }
 
-.skill img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 6px;
-  filter: grayscale(100%); /* Monochromatic effect */
-  color: #000; /* Black in light mode */
+.skill i {
+  font-size: 2.5rem; /* Larger for visibility */
+  margin-bottom: 8px;
+  color: #000; /* Solid black in light mode */
 }
 
-body.dark-mode .skill img {
-  color: #f1f1f1; /* White in dark mode */
+body.dark-mode .skill i {
+  color: #f1f1f1; /* Solid white in dark mode */
 }
 
 /* Headings */
@@ -311,7 +309,7 @@ body.dark-mode .sidebar a.active {
   #about {
     max-width: 800px;
     margin: 30px 0;
-    padding-left: 220px; /* Match desktop offset */
+    padding-left: 220px;
     padding-right: 30px;
   }
 
@@ -338,27 +336,27 @@ body.dark-mode .sidebar a.active {
     justify-content: center;
     border-right: none;
     border-bottom: 1px solid #ccc;
-    padding: 15px; /* Increased padding for better spacing */
+    padding: 15px;
     background-color: #f5f5f5;
-    gap: 12px; /* Larger gap for clarity */
+    gap: 12px;
   }
 
   .sidebar a, .sidebar #toggle-night-mode {
-    margin: 5px; /* Consistent margin for all sides */
-    font-size: 0.9rem; /* Slightly larger for readability */
+    margin: 5px;
+    font-size: 0.9rem;
     width: auto;
-    padding: 10px 15px; /* Larger padding for touch targets */
+    padding: 10px 15px;
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 6px; /* Slightly larger radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   }
 
   .sidebar a:hover, .sidebar #toggle-night-mode:hover {
     background-color: #e0e0e0;
     color: #007acc;
-    transform: scale(1.05); /* Scale instead of translate for mobile */
+    transform: scale(1.05);
   }
 
   .sidebar a.active {
@@ -392,14 +390,14 @@ body.dark-mode .sidebar a.active {
 
   .main-layout {
     margin-left: 0;
-    padding: 30px 20px; /* More padding for openness */
-    padding-top: 80px; /* Increased to account for taller sidebar */
+    padding: 30px 20px;
+    padding-top: 80px;
   }
 
   #about {
     max-width: 100%;
     margin: 20px 0;
-    padding: 0 20px; /* No left padding needed */
+    padding: 0 20px;
   }
 
   .right-sections {
@@ -412,15 +410,19 @@ body.dark-mode .sidebar a.active {
   }
 
   .skill {
-    width: 90px; /* Slightly larger for mobile */
+    width: 90px;
+  }
+
+  .skill i {
+    font-size: 2rem; /* Slightly smaller for mobile */
   }
 
   h2 {
-    font-size: 1.3rem; /* Larger for readability */
+    font-size: 1.3rem;
   }
 
   #about .intro-text h1 {
-    font-size: 1.8rem; /* Larger for mobile */
+    font-size: 1.8rem;
   }
 
   #about .intro-text h1 span {
@@ -428,7 +430,7 @@ body.dark-mode .sidebar a.active {
   }
 
   #about .intro-text p {
-    font-size: 1.05rem; /* Slightly larger for readability */
+    font-size: 1.05rem;
   }
 
   footer {
@@ -456,9 +458,8 @@ body.dark-mode .sidebar a.active {
     font-size: 0.85rem;
   }
 
-  .skill img {
-    width: 50px;
-    height: 50px;
+  .skill i {
+    font-size: 1.8rem;
   }
 
   footer {
