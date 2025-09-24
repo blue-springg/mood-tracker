@@ -43,59 +43,55 @@ body {
 
 /* Main layout */
 .main-layout {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 40px 30px; /* Increased padding for more white space */
+  padding: 40px 30px;
   max-width: 1400px;
   margin: 0 auto;
-  flex: 1;
-  margin-left: 180px; /* Adjusted for slimmer sidebar */
+  margin-left: 180px; /* Space for sidebar */
 }
 
 /* About section */
 #about {
-  flex: 3;
-  min-width: 100px;
-  margin-left: 30px; /* Reduced margin for balance */
+  max-width: 1000px; /* Wider for more screen space */
+  margin: 40px auto; /* Centered with top/bottom margin */
+  padding: 0 20px;
 }
 
 #about .intro-text h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem; /* Slightly smaller for cleaner look */
+  font-size: 2rem; /* Larger for prominence */
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-align: left;
+  text-align: center; /* Centered for balance */
 }
 
 #about .intro-text h1 span {
-  font-size: 1.3rem; /* Adjusted for hierarchy */
+  font-size: 1.4rem;
   display: block;
   margin-top: 10px;
   text-transform: none;
   letter-spacing: 0.5px;
-  text-align: left;
+  text-align: center;
 }
 
 #about .intro-text p {
-  width: 100%; /* Full width for cleaner flow */
-  max-width: 800px; /* Constrain for readability */
+  max-width: 800px;
+  margin: 15px auto; /* Centered paragraphs */
+  font-size: 1.1rem; /* Slightly larger for readability */
 }
 
 /* Right sections */
 .right-sections {
-  flex: 2;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Section visibility */
 section {
   display: none;
   scroll-margin-top: 80px;
-  max-width: 900px;
-  margin: 0 auto 60px auto;
   padding: 0 20px;
-  opacity: 0; /* For fade-in animation */
-  transition: opacity 0.5s ease; /* Smooth fade-in */
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 section.visible-section {
@@ -110,7 +106,7 @@ section.animated-section {
 @keyframes slideUpFade {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Reduced for subtler animation */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -123,7 +119,7 @@ section.animated-section {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: flex-start; /* Align left for cleaner grid */
+  justify-content: flex-start;
 }
 
 .skill {
@@ -146,13 +142,13 @@ h2 {
   padding-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.5rem; /* Smaller for cleaner hierarchy */
+  font-size: 1.5rem;
 }
 
 /* Footer */
 footer {
   background-color: #f9f9f9;
-  padding: 10px 20px; /* Reduced padding */
+  padding: 10px 20px;
   text-align: center;
   font-size: 0.9rem;
   border-top: 1px solid #ddd;
@@ -164,12 +160,12 @@ footer a {
   color: #000;
   margin: 0 15px;
   transition: color 0.3s ease, transform 0.2s ease;
-  font-size: 1.2rem; /* Larger icons */
+  font-size: 1.2rem;
 }
 
 footer a:hover {
   color: #007acc;
-  transform: scale(1.2); /* Subtle hover effect */
+  transform: scale(1.2);
 }
 
 /* Dark Mode */
@@ -195,7 +191,7 @@ body.dark-mode footer a:hover {
 #toggle-night-mode {
   background: none;
   border: none;
-  font-size: 1.2rem; /* Larger icon */
+  font-size: 1.2rem;
   cursor: pointer;
   color: #444;
   width: 100%;
@@ -221,10 +217,10 @@ body.dark-mode #toggle-night-mode:hover {
 /* Sidebar with Centered Button-Like Links */
 .sidebar {
   position: fixed;
-  top: 0; /* Moved to top since top-nav is removed */
+  top: 0;
   left: 0;
   height: 100%;
-  width: 180px; /* Slimmer sidebar */
+  width: 180px;
   background-color: #f5f5f5;
   border-right: 1px solid #ccc;
   display: flex;
@@ -232,8 +228,8 @@ body.dark-mode #toggle-night-mode:hover {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  gap: 12px; /* Tighter spacing */
-  padding: 20px 10px; /* Reduced padding */
+  gap: 12px;
+  padding: 20px 10px;
   z-index: 999;
 }
 
@@ -243,21 +239,21 @@ body.dark-mode #toggle-night-mode:hover {
   font-weight: 600;
   color: #333;
   text-transform: uppercase;
-  font-size: 0.9rem; /* Slightly smaller */
+  font-size: 0.9rem;
   width: 100%;
-  padding: 10px 15px; /* Smaller padding */
+  padding: 10px 15px;
   background-color: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 6px; /* Smaller radius */
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
-  display: flex; /* For icon alignment */
+  display: flex;
   align-items: center;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px;
 }
 
 .sidebar a i {
-  font-size: 1rem; /* Icon size */
+  font-size: 1rem;
 }
 
 .sidebar a:hover {
@@ -301,14 +297,13 @@ body.dark-mode .sidebar a.active {
 /* Tablets and small laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
   .main-layout {
-    flex-direction: column;
-    gap: 30px;
     padding: 30px 40px;
     margin-left: 180px;
   }
 
   #about {
-    margin-left: 0;
+    max-width: 800px; /* Slightly smaller for tablets */
+    margin: 30px auto;
     padding: 0 30px;
   }
 
@@ -389,14 +384,13 @@ body.dark-mode .sidebar a.active {
 
   .main-layout {
     margin-left: 0;
-    flex-direction: column;
-    gap: 30px;
     padding: 20px;
-    padding-top: 60px; /* Adjusted for shorter sidebar */
+    padding-top: 60px;
   }
 
   #about {
-    margin-left: 0;
+    max-width: 100%;
+    margin: 20px auto;
     padding: 0 20px;
   }
 
@@ -418,15 +412,15 @@ body.dark-mode .sidebar a.active {
   }
 
   #about .intro-text h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   #about .intro-text h1 span {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
   }
 
   #about .intro-text p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   footer {
@@ -438,16 +432,15 @@ body.dark-mode .sidebar a.active {
 /* Extra small screens */
 @media (max-width: 480px) {
   #about .intro-text h1 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   #about .intro-text h1 span {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
   }
 
   #about .intro-text p {
-    font-size: 0.85rem;
-    width: 100%;
+    font-size: 0.9rem;
   }
 
   .skill {
