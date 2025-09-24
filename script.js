@@ -43,13 +43,22 @@ document.querySelector('.sidebar a[href="#about"]').classList.add('active');
 
 // Night mode toggle
 const toggleBtn = document.getElementById('toggle-night-mode');
+const toggleIcon = toggleBtn.querySelector('i');
 
+// Set initial icon based on night mode state
 if (localStorage.getItem('nightMode') === 'enabled') {
   document.body.classList.add('dark-mode');
+  toggleIcon.classList.remove('fa-sun');
+  toggleIcon.classList.add('fa-moon');
+} else {
+  toggleIcon.classList.remove('fa-moon');
+  toggleIcon.classList.add('fa-sun');
 }
 
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  localStorage.setItem('nightMode',
-    document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  localStorage.setItem('nightMode', isDarkMode ? 'enabled' : 'disabled');
+  toggleIcon.classList.toggle('fa-sun', !isDarkMode);
+  toggleIcon.classList.toggle('fa-moon', isDarkMode);
 });
