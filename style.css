@@ -51,17 +51,17 @@ body {
 
 /* About section */
 #about {
-  max-width: 1000px; /* Wider for more screen space */
-  margin: 40px auto; /* Centered with top/bottom margin */
+  max-width: 1000px; /* Wide for more screen space */
+  margin: 40px 0 40px 30px; /* Left-aligned with sidebar margin */
   padding: 0 20px;
 }
 
 #about .intro-text h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2rem; /* Larger for prominence */
+  font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-align: center; /* Centered for balance */
+  text-align: left; /* Left-aligned */
 }
 
 #about .intro-text h1 span {
@@ -70,13 +70,13 @@ body {
   margin-top: 10px;
   text-transform: none;
   letter-spacing: 0.5px;
-  text-align: center;
+  text-align: left; /* Left-aligned */
 }
 
 #about .intro-text p {
   max-width: 800px;
-  margin: 15px auto; /* Centered paragraphs */
-  font-size: 1.1rem; /* Slightly larger for readability */
+  margin: 15px 0; /* Left-aligned, no auto centering */
+  font-size: 1.1rem;
 }
 
 /* Right sections */
@@ -132,6 +132,12 @@ section.animated-section {
   width: 60px;
   height: 60px;
   margin-bottom: 6px;
+  filter: grayscale(100%); /* Monochromatic effect */
+  color: #000; /* Black in light mode */
+}
+
+body.dark-mode .skill img {
+  color: #f1f1f1; /* White in dark mode */
 }
 
 /* Headings */
@@ -302,8 +308,8 @@ body.dark-mode .sidebar a.active {
   }
 
   #about {
-    max-width: 800px; /* Slightly smaller for tablets */
-    margin: 30px auto;
+    max-width: 800px;
+    margin: 30px 0 30px 30px; /* Left-aligned */
     padding: 0 30px;
   }
 
@@ -390,7 +396,7 @@ body.dark-mode .sidebar a.active {
 
   #about {
     max-width: 100%;
-    margin: 20px auto;
+    margin: 20px 0; /* Left-aligned, no left margin */
     padding: 0 20px;
   }
 
