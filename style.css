@@ -125,12 +125,12 @@ section.animated-section {
 
 .skill {
   text-align: center;
-  width: 120px; /* Increased to accommodate larger icons */
+  width: 120px; /* Accommodates larger icons */
   font-size: 0.9rem;
 }
 
 .skill i {
-  font-size: 3.5rem; /* Larger for better visibility */
+  font-size: 3.5rem; /* Larger for visibility */
   margin-bottom: 8px;
   color: #000; /* Solid black in light mode */
 }
@@ -323,7 +323,7 @@ body.dark-mode .sidebar a.active {
   }
 
   .skill {
-    width: 100px; /* Smaller to fit tablet screens */
+    width: 100px; /* Smaller to fit seven skills */
   }
 }
 
@@ -411,14 +411,15 @@ body.dark-mode .sidebar a.active {
 
   .skills-grid {
     justify-content: center;
+    gap: 15px; /* Slightly smaller gap for seven skills */
   }
 
   .skill {
-    width: 100px; /* Adjusted for larger icons */
+    width: 100px;
   }
 
   .skill i {
-    font-size: 3rem; /* Larger for mobile visibility */
+    font-size: 3rem;
   }
 
   h2 {
@@ -463,7 +464,11 @@ body.dark-mode .sidebar a.active {
   }
 
   .skill i {
-    font-size: 2.5rem; /* Slightly smaller for very small screens */
+    font-size: 2.5rem;
+  }
+
+  .skills-grid {
+    gap: 12px; /* Tighter for small screens */
   }
 
   footer {
