@@ -41,78 +41,35 @@ body {
   }
 }
 
-/* Top navigation */
-.top-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f5f5f5;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #ccc;
-}
-
-.top-nav .nav-left {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1rem;
-  color: #444;
-}
-
-.top-nav .nav-right {
-  display: flex;
-  gap: 25px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1rem;
-  color: #444;
-}
-
-.top-nav .nav-right a {
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.top-nav .nav-right a:hover {
-  color: #007acc;
-}
-
 /* Main layout */
 .main-layout {
   display: flex;
   justify-content: space-between;
   gap: 40px;
-  padding: 40px 20px;
+  padding: 40px 30px; /* Increased padding for more white space */
   max-width: 1400px;
   margin: 0 auto;
   flex: 1;
-  margin-left: 200px; /* Space for sidebar */
+  margin-left: 180px; /* Adjusted for slimmer sidebar */
 }
 
 /* About section */
 #about {
   flex: 3;
   min-width: 100px;
-  margin-left: 40px;
+  margin-left: 30px; /* Reduced margin for balance */
 }
 
 #about .intro-text h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.9rem;
+  font-size: 1.8rem; /* Slightly smaller for cleaner look */
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: left;
 }
 
 #about .intro-text h1 span {
-  font-size: 1.4rem;
+  font-size: 1.3rem; /* Adjusted for hierarchy */
   display: block;
   margin-top: 10px;
   text-transform: none;
@@ -121,8 +78,8 @@ body {
 }
 
 #about .intro-text p {
-  width: 70vw;
-  max-width: none;
+  width: 100%; /* Full width for cleaner flow */
+  max-width: 800px; /* Constrain for readability */
 }
 
 /* Right sections */
@@ -137,10 +94,13 @@ section {
   max-width: 900px;
   margin: 0 auto 60px auto;
   padding: 0 20px;
+  opacity: 0; /* For fade-in animation */
+  transition: opacity 0.5s ease; /* Smooth fade-in */
 }
 
 section.visible-section {
   display: block;
+  opacity: 1;
 }
 
 section.animated-section {
@@ -150,7 +110,7 @@ section.animated-section {
 @keyframes slideUpFade {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px); /* Reduced for subtler animation */
   }
   to {
     opacity: 1;
@@ -163,6 +123,7 @@ section.animated-section {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: flex-start; /* Align left for cleaner grid */
 }
 
 .skill {
@@ -185,14 +146,15 @@ h2 {
   padding-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: 1.5rem; /* Smaller for cleaner hierarchy */
 }
 
 /* Footer */
 footer {
   background-color: #f9f9f9;
-  padding: 15px 20px;
+  padding: 10px 20px; /* Reduced padding */
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   border-top: 1px solid #ddd;
   margin-top: auto;
 }
@@ -200,35 +162,20 @@ footer {
 footer a {
   text-decoration: none;
   color: #000;
-  margin: 0 10px;
-  transition: color 0.3s ease;
+  margin: 0 15px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-size: 1.2rem; /* Larger icons */
 }
 
 footer a:hover {
   color: #007acc;
-}
-
-footer i {
-  margin-right: 5px;
+  transform: scale(1.2); /* Subtle hover effect */
 }
 
 /* Dark Mode */
 body.dark-mode {
   background: #121212;
   color: #f1f1f1;
-}
-
-body.dark-mode .top-nav {
-  background-color: #1f1f1f;
-  border-bottom: 1px solid #444;
-}
-
-body.dark-mode .top-nav .nav-left {
-  color: #ddd;
-}
-
-body.dark-mode .top-nav .nav-right a {
-  color: #ddd;
 }
 
 body.dark-mode footer {
@@ -241,38 +188,52 @@ body.dark-mode footer a {
   color: #ccc;
 }
 
+body.dark-mode footer a:hover {
+  color: #66b2ff;
+}
+
 #toggle-night-mode {
   background: none;
   border: none;
-  font-size: 18px;
-  margin-left: 10px;
+  font-size: 1.2rem; /* Larger icon */
   cursor: pointer;
   color: #444;
-  transition: color 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+#toggle-night-mode:hover {
+  background-color: #e0e0e0;
 }
 
 body.dark-mode #toggle-night-mode {
   color: #f1f1f1;
 }
 
-/* ------------------------------ */
+body.dark-mode #toggle-night-mode:hover {
+  background-color: #3a3a3a;
+}
+
 /* Sidebar with Centered Button-Like Links */
-/* ------------------------------ */
 .sidebar {
   position: fixed;
-  top: 60px;
+  top: 0; /* Moved to top since top-nav is removed */
   left: 0;
-  height: calc(100% - 60px);
-  width: 200px;
+  height: 100%;
+  width: 180px; /* Slimmer sidebar */
   background-color: #f5f5f5;
   border-right: 1px solid #ccc;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center links horizontally */
+  align-items: center;
   justify-content: flex-start;
-  text-align: center; /* Center text inside links */
-  gap: 15px; /* Tighter spacing for buttons */
-  padding: 30px 15px;
+  text-align: center;
+  gap: 12px; /* Tighter spacing */
+  padding: 20px 10px; /* Reduced padding */
   z-index: 999;
 }
 
@@ -280,28 +241,35 @@ body.dark-mode #toggle-night-mode {
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: #333; /* Darker color for better contrast */
+  color: #333;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly smaller */
   width: 100%;
-  padding: 12px 20px; /* Padding for button-like appearance */
-  background-color: #ffffff; /* White background for buttons */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  padding: 10px 15px; /* Smaller padding */
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px; /* Smaller radius */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: flex; /* For icon alignment */
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.sidebar a i {
+  font-size: 1rem; /* Icon size */
 }
 
 .sidebar a:hover {
-  background-color: #e0e0e0; /* Light gray hover effect */
-  color: #007acc; /* Match existing hover color */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: #e0e0e0;
+  color: #007acc;
+  transform: translateY(-2px);
 }
 
 .sidebar a.active {
-  background-color: #007acc; /* Highlight active section */
-  color: #ffffff; /* White text for contrast */
-  border-color: #007acc; /* Match border to background */
+  background-color: #007acc;
+  color: #ffffff;
+  border-color: #007acc;
 }
 
 /* Dark mode for sidebar */
@@ -312,25 +280,23 @@ body.dark-mode .sidebar {
 
 body.dark-mode .sidebar a {
   color: #ddd;
-  background-color: #2a2a2a; /* Darker button background */
-  border: 1px solid #555; /* Subtle border for dark mode */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Darker shadow */
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 body.dark-mode .sidebar a:hover {
-  background-color: #3a3a3a; /* Slightly lighter gray for hover */
-  color: #66b2ff; /* Match dark mode hover color */
+  background-color: #3a3a3a;
+  color: #66b2ff;
 }
 
 body.dark-mode .sidebar a.active {
-  background-color: #66b2ff; /* Lighter blue for active state */
+  background-color: #66b2ff;
   color: #ffffff;
   border-color: #66b2ff;
 }
 
-/* ------------------------------ */
 /* Responsive Design */
-/* ------------------------------ */
 
 /* Tablets and small laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -338,7 +304,7 @@ body.dark-mode .sidebar a.active {
     flex-direction: column;
     gap: 30px;
     padding: 30px 40px;
-    margin-left: 200px;
+    margin-left: 180px;
   }
 
   #about {
@@ -351,16 +317,6 @@ body.dark-mode .sidebar a.active {
     margin-top: 30px;
   }
 
-  .top-nav {
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 15px 25px;
-  }
-
-  #about .intro-text p {
-    width: 100%;
-  }
-
   .skills-grid {
     justify-content: center;
   }
@@ -370,33 +326,33 @@ body.dark-mode .sidebar a.active {
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 100%;
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center; /* Center links on mobile */
+    justify-content: center;
     border-right: none;
     border-bottom: 1px solid #ccc;
     padding: 10px 15px;
     background-color: #f5f5f5;
-    gap: 10px; /* Smaller gap for mobile */
+    gap: 8px;
   }
 
-  .sidebar a {
+  .sidebar a, .sidebar #toggle-night-mode {
     margin-right: 10px;
-    font-size: 0.9rem;
-    width: auto; /* Allow buttons to size based on content */
-    padding: 10px 15px; /* Smaller padding for mobile */
+    font-size: 0.85rem;
+    width: auto;
+    padding: 8px 12px;
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 6px; /* Smaller radius for mobile */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   }
 
-  .sidebar a:hover {
+  .sidebar a:hover, .sidebar #toggle-night-mode:hover {
     background-color: #e0e0e0;
     color: #007acc;
     transform: translateY(-2px);
@@ -413,14 +369,14 @@ body.dark-mode .sidebar a.active {
     border-bottom: 1px solid #444;
   }
 
-  body.dark-mode .sidebar a {
+  body.dark-mode .sidebar a, body.dark-mode .sidebar #toggle-night-mode {
     color: #ddd;
     background-color: #2a2a2a;
     border: 1px solid #555;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   }
 
-  body.dark-mode .sidebar a:hover {
+  body.dark-mode .sidebar a:hover, body.dark-mode .sidebar #toggle-night-mode:hover {
     background-color: #3a3a3a;
     color: #66b2ff;
   }
@@ -436,7 +392,7 @@ body.dark-mode .sidebar a.active {
     flex-direction: column;
     gap: 30px;
     padding: 20px;
-    padding-top: 80px;
+    padding-top: 60px; /* Adjusted for shorter sidebar */
   }
 
   #about {
@@ -447,18 +403,6 @@ body.dark-mode .sidebar a.active {
   .right-sections {
     margin-top: 20px;
     padding: 0 20px;
-  }
-
-  .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    padding: 10px 20px;
-  }
-
-  .top-nav .nav-right {
-    flex-wrap: wrap;
-    gap: 10px;
   }
 
   .skills-grid {
@@ -474,41 +418,31 @@ body.dark-mode .sidebar a.active {
   }
 
   #about .intro-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   #about .intro-text h1 span {
-    font-size: 1rem;
-  }
-
-  #about .intro-text p {
     font-size: 0.95rem;
   }
 
-  footer {
-    padding: 10px;
+  #about .intro-text p {
     font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 8px;
+    font-size: 0.85rem;
   }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
-  .top-nav .nav-left {
-    font-size: 0.9rem;
-  }
-
-  .top-nav .nav-right {
-    flex-direction: column;
-    gap: 5px;
-    font-size: 0.9rem;
-  }
-
   #about .intro-text h1 {
     font-size: 1.2rem;
   }
 
   #about .intro-text h1 span {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   #about .intro-text p {
@@ -527,7 +461,7 @@ body.dark-mode .sidebar a.active {
   }
 
   footer {
-    font-size: 0.85rem;
-    padding: 8px;
+    font-size: 0.8rem;
+    padding: 6px;
   }
 }
