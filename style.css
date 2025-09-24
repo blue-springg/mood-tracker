@@ -46,14 +46,15 @@ body {
   padding: 40px 30px;
   max-width: 1400px;
   margin: 0 auto;
-  margin-left: 180px; /* Space for sidebar */
+  margin-left: 200px; /* Increased to ensure no overlap with sidebar */
 }
 
 /* About section */
 #about {
   max-width: 1000px; /* Wide for more screen space */
-  margin: 40px 0 40px 30px; /* Left-aligned with sidebar margin */
-  padding: 0 20px;
+  margin: 40px 0; /* No left margin to avoid shifting under sidebar */
+  padding-left: 220px; /* Offset to clear sidebar */
+  padding-right: 20px;
 }
 
 #about .intro-text h1 {
@@ -61,7 +62,7 @@ body {
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-align: left; /* Left-aligned */
+  text-align: left;
 }
 
 #about .intro-text h1 span {
@@ -70,12 +71,12 @@ body {
   margin-top: 10px;
   text-transform: none;
   letter-spacing: 0.5px;
-  text-align: left; /* Left-aligned */
+  text-align: left;
 }
 
 #about .intro-text p {
   max-width: 800px;
-  margin: 15px 0; /* Left-aligned, no auto centering */
+  margin: 15px 0;
   font-size: 1.1rem;
 }
 
@@ -304,13 +305,14 @@ body.dark-mode .sidebar a.active {
 @media (min-width: 769px) and (max-width: 1024px) {
   .main-layout {
     padding: 30px 40px;
-    margin-left: 180px;
+    margin-left: 200px;
   }
 
   #about {
     max-width: 800px;
-    margin: 30px 0 30px 30px; /* Left-aligned */
-    padding: 0 30px;
+    margin: 30px 0;
+    padding-left: 220px; /* Match desktop offset */
+    padding-right: 30px;
   }
 
   .right-sections {
@@ -336,27 +338,27 @@ body.dark-mode .sidebar a.active {
     justify-content: center;
     border-right: none;
     border-bottom: 1px solid #ccc;
-    padding: 10px 15px;
+    padding: 15px; /* Increased padding for better spacing */
     background-color: #f5f5f5;
-    gap: 8px;
+    gap: 12px; /* Larger gap for clarity */
   }
 
   .sidebar a, .sidebar #toggle-night-mode {
-    margin-right: 10px;
-    font-size: 0.85rem;
+    margin: 5px; /* Consistent margin for all sides */
+    font-size: 0.9rem; /* Slightly larger for readability */
     width: auto;
-    padding: 8px 12px;
+    padding: 10px 15px; /* Larger padding for touch targets */
     background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 6px; /* Slightly larger radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   }
 
   .sidebar a:hover, .sidebar #toggle-night-mode:hover {
     background-color: #e0e0e0;
     color: #007acc;
-    transform: translateY(-2px);
+    transform: scale(1.05); /* Scale instead of translate for mobile */
   }
 
   .sidebar a.active {
@@ -374,7 +376,7 @@ body.dark-mode .sidebar a.active {
     color: #ddd;
     background-color: #2a2a2a;
     border: 1px solid #555;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
 
   body.dark-mode .sidebar a:hover, body.dark-mode .sidebar #toggle-night-mode:hover {
@@ -390,14 +392,14 @@ body.dark-mode .sidebar a.active {
 
   .main-layout {
     margin-left: 0;
-    padding: 20px;
-    padding-top: 60px;
+    padding: 30px 20px; /* More padding for openness */
+    padding-top: 80px; /* Increased to account for taller sidebar */
   }
 
   #about {
     max-width: 100%;
-    margin: 20px 0; /* Left-aligned, no left margin */
-    padding: 0 20px;
+    margin: 20px 0;
+    padding: 0 20px; /* No left padding needed */
   }
 
   .right-sections {
@@ -410,48 +412,48 @@ body.dark-mode .sidebar a.active {
   }
 
   .skill {
-    width: 80px;
+    width: 90px; /* Slightly larger for mobile */
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem; /* Larger for readability */
   }
 
   #about .intro-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem; /* Larger for mobile */
   }
 
   #about .intro-text h1 span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   #about .intro-text p {
-    font-size: 1rem;
+    font-size: 1.05rem; /* Slightly larger for readability */
   }
 
   footer {
-    padding: 8px;
-    font-size: 0.85rem;
+    padding: 10px;
+    font-size: 0.9rem;
   }
 }
 
 /* Extra small screens */
 @media (max-width: 480px) {
   #about .intro-text h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   #about .intro-text h1 span {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   #about .intro-text p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 
   .skill {
-    width: 70px;
-    font-size: 0.8rem;
+    width: 80px;
+    font-size: 0.85rem;
   }
 
   .skill img {
@@ -460,7 +462,7 @@ body.dark-mode .sidebar a.active {
   }
 
   footer {
-    font-size: 0.8rem;
-    padding: 6px;
+    font-size: 0.85rem;
+    padding: 8px;
   }
 }
