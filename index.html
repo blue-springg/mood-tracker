@@ -7,7 +7,7 @@
 
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERX3q+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -20,11 +20,11 @@
   <!-- Sidebar Navigation -->
   <aside class="sidebar">
     <button id="toggle-night-mode" aria-label="Toggle night mode"><i class="fas fa-moon"></i></button>
-    <a href="#about"><i class="fas fa-user"></i> ABOUT ME</a>
+    <a href="#about" aria-current="page"><i class="fas fa-user"></i> ABOUT ME</a>
     <a href="#experience"><i class="fas fa-briefcase"></i> EXPERIENCE</a>
     <a href="#skills"><i class="fas fa-tools"></i> SKILLS</a>
     <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
-    <a href="#projects"><i class="fas fa-project-diagram"></i> PROJECTS</a>
+    <a href="#projects"><i class="fas fa-diagram-project"></i> PROJECTS</a>
   </aside>
 
   <!-- About Me Section -->
@@ -129,47 +129,118 @@
       <!-- CV -->
       <section id="cv" tabindex="0" aria-label="CV">
         <h2>CV <span style="font-size: 0.85rem; font-weight: normal;">(Click each one to view the certificate)</span></h2>
-        <ol>
-          <li><a href="certificates/Machine%20Learning.pdf" target="_blank">Machine Learning – Stanford University (Coursera)</a></li>
-          <li><a href="certificates/Python%20for%20Everybody.pdf" target="_blank">Python for Everybody – University of Michigan (Coursera)</a></li>
-          <li><a href="certificates/Web%20Design%20for%20Everybody.pdf" target="_blank">Web Design – University of Michigan (Coursera)</a></li>
-          <li><a href="certificates/Google%20Analytics%20Certification.pdf" target="_blank">Google Analytics Certification – Google</a></li>
-          <li><a href="certificates/Conversion%20Optimization%20Certification.pdf" target="_blank">Conversion Optimization – Google</a></li>
-          <li><a href="certificates/Introduction%20to%20Cybersecurity.pdf" target="_blank">Cybersecurity – Cisco Networking Academy</a></li>
-          <li><a href="certificates/Elements%20of%20AI.png" target="_blank">Elements of AI – University of Helsinki</a></li>
-          <li><a href="certificates/Build%20a%20Free%20Website%20with%20WordPress.pdf" target="_blank">WordPress – Coursera Project</a></li>
-          <li><a href="certificates/Getting%20Started%20with%20Microsoft%20Excel.pdf" target="_blank">Excel – Coursera Project</a></li>
-        </ol>
+        <div class="cv-timeline">
+          <ol>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Machine Learning</h3>
+                <p class="cv-issuer">Stanford University (Coursera)</p>
+                <a href="certificates/Machine%20Learning.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Python for Everybody</h3>
+                <p class="cv-issuer">University of Michigan (Coursera)</p>
+                <a href="certificates/Python%20for%20Everybody.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Web Design for Everybody</h3>
+                <p class="cv-issuer">University of Michigan (Coursera)</p>
+                <a href="certificates/Web%20Design%20for%20Everybody.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Google Analytics Certification</h3>
+                <p class="cv-issuer">Google</p>
+                <a href="certificates/Google%20Analytics%20Certification.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Conversion Optimization</h3>
+                <p class="cv-issuer">Google</p>
+                <a href="certificates/Conversion%20Optimization%20Certification.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Introduction to Cybersecurity</h3>
+                <p class="cv-issuer">Cisco Networking Academy</p>
+                <a href="certificates/Introduction%20to%20Cybersecurity.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Elements of AI</h3>
+                <p class="cv-issuer">University of Helsinki</p>
+                <a href="certificates/Elements%20of%20AI.png" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Build a Free Website with WordPress</h3>
+                <p class="cv-issuer">Coursera Project</p>
+                <a href="certificates/Build%20a%20Free%20Website%20with%20WordPress.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+            <li class="cv-item">
+              <div class="timeline-dot"></div>
+              <div class="cv-content">
+                <h3>Getting Started with Microsoft Excel</h3>
+                <p class="cv-issuer">Coursera Project</p>
+                <a href="certificates/Getting%20Started%20with%20Microsoft%20Excel.pdf" target="_blank" class="cv-link">View Certificate</a>
+              </div>
+            </li>
+          </ol>
+        </div>
       </section>
 
       <!-- Projects -->
       <section id="projects" tabindex="0" aria-label="Projects">
         <h2>Projects <small>(Besides this portfolio)</small></h2>
-        <div class="project">
-          <h3>Coffee To-Do List</h3>
-          <p>A responsive to-do list app with task filtering, local storage, dark mode, and accessibility features, styled with a cozy Nescafé-inspired theme using HTML, CSS, and JavaScript.</p>
-          <ul>
-            <li><a href="https://bluespringg.github.io/to-do-list/" target="_blank">View Live Demo</a></li>
-            <li><a href="https://github.com/bluespringg/to-do-list/" target="_blank">View the Code on GitHub</a></li>
-          </ul>
-        </div>
-        <div class="project">
-          <h3>Parrot’s Night Scape</h3>
-          <p>A simple flying game made with Scratch and JavaScript.</p>
-          <a href="https://scratch.mit.edu/projects/1103240101/" target="_blank">Play Game</a>
-        </div>
-        <div class="project">
-          <h3>The First Forest – Fan Page</h3>
-          <p>A fan website for a Chinese drama built using HTML and CSS, with design ideas generated using AI tools.</p>
-          <a href="https://bluespringg.github.io/the-first-forest/" target="_blank">View Project</a>
-        </div>
-        <div class="project">
-          <h3>Mood Booster App (Python)</h3>
-          <p>A motivational app recommending quotes and music based on mood, with code debugging assisted by AI tools.</p>
-          <ul>
-            <li><a href="https://colab.research.google.com/drive/1tILdMOqUn_TRbn66jHTo0HGMu5fG9KMU?usp=sharing" target="_blank">Try it live on Google Colab</a></li>
-            <li><a href="#" target="_blank">View the code on GitHub</a></li>
-          </ul>
+        <div class="projects-grid">
+          <div class="project-item">
+            <h3>Coffee To-Do List</h3>
+            <p class="project-description">A responsive to-do list app with task filtering, local storage, dark mode, and accessibility features, styled with a cozy Nescafé-inspired theme using HTML, CSS, and JavaScript.</p>
+            <div class="project-links">
+              <a href="https://bluespringg.github.io/to-do-list/" target="_blank" class="project-link">View Live Demo</a>
+              <a href="https://github.com/bluespringg/to-do-list/" target="_blank" class="project-link">View the Code on GitHub</a>
+            </div>
+          </div>
+          <div class="project-item">
+            <h3>Parrot’s Night Scape</h3>
+            <p class="project-description">A simple flying game made with Scratch and JavaScript.</p>
+            <div class="project-links">
+              <a href="https://scratch.mit.edu/projects/1103240101/" target="_blank" class="project-link">Play Game</a>
+            </div>
+          </div>
+          <div class="project-item">
+            <h3>The First Forest – Fan Page</h3>
+            <p class="project-description">A fan website for a Chinese drama built using HTML and CSS, with design ideas generated using AI tools.</p>
+            <div class="project-links">
+              <a href="https://bluespringg.github.io/the-first-forest/" target="_blank" class="project-link">View Project</a>
+            </div>
+          </div>
+          <div class="project-item">
+            <h3>Mood Booster App (Python)</h3>
+            <p class="project-description">A motivational app recommending quotes and music based on mood, with code debugging assisted by AI tools.</p>
+            <div class="project-links">
+              <a href="https://colab.research.google.com/drive/1tILdMOqUn_TRbn66jHTo0HGMu5fG9KMU?usp=sharing" target="_blank" class="project-link">Try it live on Google Colab</a>
+              <a href="https://github.com/bluespringg/mood-booster-app" target="_blank" class="project-link">View the Code on GitHub</a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
