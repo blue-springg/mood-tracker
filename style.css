@@ -148,12 +148,12 @@ section.animated-section {
   top: 0;
   height: 100%;
   width: 4px;
-  background: #FF6F61;
+  background: #6B4E71;
   border-radius: 2px;
 }
 
 body.dark-mode .experience-timeline::before {
-  background: #2E4A3D;
+  background: #A68DA8;
 }
 
 .experience-item {
@@ -167,7 +167,7 @@ body.dark-mode .experience-timeline::before {
   top: 10px;
   width: 16px;
   height: 16px;
-  background: #FF6F61;
+  background: #6B4E71;
   border: 3px solid #F8F9FA;
   border-radius: 50%;
   box-shadow: 0 0 0 4px #F8F9FA;
@@ -175,7 +175,7 @@ body.dark-mode .experience-timeline::before {
 }
 
 body.dark-mode .timeline-dot {
-  background: #2E4A3D;
+  background: #A68DA8;
   border: 3px solid #1F1F1F;
   box-shadow: 0 0 0 4px #1F1F1F;
 }
@@ -260,12 +260,12 @@ body.dark-mode .experience-list li {
   font-weight: 900;
   position: absolute;
   left: 0;
-  color: #FF6F61;
+  color: #6B4E71;
   font-size: 1rem;
 }
 
 body.dark-mode .experience-list li::before {
-  color: #4A8B88;
+  color: #A68DA8;
 }
 
 .experience-list ul {
@@ -293,12 +293,12 @@ body.dark-mode .experience-list li::before {
   top: 0;
   height: 100%;
   width: 4px;
-  background: #FF6F61;
+  background: #6B4E71;
   border-radius: 2px;
 }
 
 body.dark-mode .cv-timeline::before {
-  background: #2E4A3D;
+  background: #A68DA8;
 }
 
 .cv-item {
@@ -312,7 +312,7 @@ body.dark-mode .cv-timeline::before {
   top: 10px;
   width: 16px;
   height: 16px;
-  background: #FF6F61;
+  background: #6B4E71;
   border: 3px solid #F8F9FA;
   border-radius: 50%;
   box-shadow: 0 0 0 4px #F8F9FA;
@@ -320,7 +320,7 @@ body.dark-mode .cv-timeline::before {
 }
 
 body.dark-mode .cv-item .timeline-dot {
-  background: #2E4A3D;
+  background: #A68DA8;
   border: 3px solid #1F1F1F;
   box-shadow: 0 0 0 4px #1F1F1F;
 }
@@ -375,22 +375,22 @@ body.dark-mode .cv-issuer {
 .cv-link {
   display: inline-block;
   font-size: 0.9rem;
-  color: #FF6F61;
+  color: #6B4E71;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 body.dark-mode .cv-link {
-  color: #4A8B88;
+  color: #A68DA8;
 }
 
 .cv-link:hover {
-  color: #E74C3C;
+  color: #4B304F;
 }
 
 body.dark-mode .cv-link:hover {
-  color: #66B2FF;
+  color: #D1B2D3;
 }
 
 /* Projects Section */
@@ -452,27 +452,27 @@ body.dark-mode .project-description {
 .project-link {
   display: inline-block;
   font-size: 0.9rem;
-  color: #FF6F61;
+  color: #6B4E71;
   text-decoration: none;
   font-weight: 600;
   padding: 6px 12px;
-  border: 1px solid #FF6F61;
+  border: 1px solid #6B4E71;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.dark-mode .project-link {
-  color: #4A8B88;
-  border-color: #4A8B88;
+  color: #A68DA8;
+  border-color: #A68DA8;
 }
 
 .project-link:hover {
-  background-color: #FF6F61;
+  background-color: #6B4E71;
   color: #FFFFFF;
 }
 
 body.dark-mode .project-link:hover {
-  background-color: #4A8B88;
+  background-color: #A68DA8;
   color: #FFFFFF;
 }
 
@@ -525,7 +525,7 @@ h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   margin-bottom: 20px;
-  border-bottom: 2px solid #FF6F61;
+  border-bottom: 2px solid #6B4E71;
   padding-bottom: 6px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -533,7 +533,7 @@ h2 {
 }
 
 body.dark-mode h2 {
-  border-bottom: 2px solid #2E4A3D;
+  border-bottom: 2px solid #A68DA8;
   color: #E6E6E6;
 }
 
@@ -549,7 +549,7 @@ footer {
 
 body.dark-mode footer {
   background-color: #1F1F1F;
-  border-top: 1px solid #4A8B88;
+  border-top: 1px solid #A68DA8;
 }
 
 footer a {
@@ -565,12 +565,12 @@ body.dark-mode footer a {
 }
 
 footer a:hover {
-  color: #FF6F61;
+  color: #6B4E71;
   transform: scale(1.2);
 }
 
 body.dark-mode footer a:hover {
-  color: #4A8B88;
+  color: #A68DA8;
 }
 
 /* Dark Mode Toggle */
@@ -589,12 +589,12 @@ body.dark-mode footer a:hover {
 }
 
 #toggle-night-mode:focus {
-  outline: 2px solid #FF6F61;
+  outline: 2px solid #6B4E71;
   outline-offset: 2px;
 }
 
 body.dark-mode #toggle-night-mode:focus {
-  outline-color: #4A8B88;
+  outline-color: #A68DA8;
 }
 
 #toggle-night-mode:hover {
@@ -630,7 +630,7 @@ body.dark-mode #toggle-night-mode:hover {
 
 body.dark-mode .sidebar {
   background-color: #1F1F1F;
-  border-right: 1px solid #4A8B88;
+  border-right: 1px solid #A68DA8;
 }
 
 .sidebar a {
@@ -655,7 +655,7 @@ body.dark-mode .sidebar {
 body.dark-mode .sidebar a {
   color: #E6E6E6;
   background-color: #2A2A2A;
-  border: 1px solid #4A8B88;
+  border: 1px solid #A68DA8;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -666,35 +666,35 @@ body.dark-mode .sidebar a {
 }
 
 .sidebar a:focus {
-  outline: 2px solid #FF6F61;
+  outline: 2px solid #6B4E71;
   outline-offset: 2px;
 }
 
 body.dark-mode .sidebar a:focus {
-  outline-color: #4A8B88;
+  outline-color: #A68DA8;
 }
 
 .sidebar a:hover {
   background-color: #D5DBDB;
-  color: #FF6F61;
+  color: #6B4E71;
   transform: translateY(-2px);
 }
 
 body.dark-mode .sidebar a:hover {
   background-color: #3A3A3A;
-  color: #4A8B88;
+  color: #A68DA8;
 }
 
 .sidebar a.active {
-  background-color: #FF6F61;
+  background-color: #6B4E71;
   color: #FFFFFF;
-  border-color: #FF6F61;
+  border-color: #6B4E71;
 }
 
 body.dark-mode .sidebar a.active {
-  background-color: #2E4A3D;
+  background-color: #A68DA8;
   color: #FFFFFF;
-  border-color: #2E4A3D;
+  border-color: #A68DA8;
 }
 
 /* Responsive Design */
@@ -767,7 +767,7 @@ body.dark-mode .sidebar a.active {
 
   body.dark-mode .sidebar {
     background-color: #1F1F1F;
-    border-bottom: 1px solid #4A8B88;
+    border-bottom: 1px solid #A68DA8;
   }
 
   .sidebar a, .sidebar #toggle-night-mode {
@@ -784,31 +784,31 @@ body.dark-mode .sidebar a.active {
 
   body.dark-mode .sidebar a, body.dark-mode .sidebar #toggle-night-mode {
     background-color: #2A2A2A;
-    border: 1px solid #4A8B88;
+    border: 1px solid #A68DA8;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
 
   .sidebar a:hover, .sidebar #toggle-night-mode:hover {
     background-color: #D5DBDB;
-    color: #FF6F61;
+    color: #6B4E71;
     transform: scale(1.05);
   }
 
   body.dark-mode .sidebar a:hover, body.dark-mode .sidebar #toggle-night-mode:hover {
     background-color: #3A3A3A;
-    color: #4A8B88;
+    color: #A68DA8;
   }
 
   .sidebar a.active {
-    background-color: #FF6F61;
+    background-color: #6B4E71;
     color: #FFFFFF;
-    border-color: #FF6F61;
+    border-color: #6B4E71;
   }
 
   body.dark-mode .sidebar a.active {
-    background-color: #2E4A3D;
+    background-color: #A68DA8;
     color: #FFFFFF;
-    border-color: #2E4A3D;
+    border-color: #A68DA8;
   }
 
   .main-layout {
