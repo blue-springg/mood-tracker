@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <i class="fas fa-star"></i> <!-- Test icon to confirm Font Awesome -->
+  <div style="position: fixed; top: 10px; left: 10px; z-index: 10000;">
+    <i class="fab fa-python"></i>
+    <i class="fab fa-whatsapp"></i>
+  </div>
   <!-- Splash Screen -->
   <div id="splash">WELCOME TO MY PORTFOLIO</div>
-
   <!-- Sidebar Navigation -->
   <aside class="sidebar">
     <button id="toggle-night-mode" aria-label="Toggle night mode"><i class="fas fa-moon"></i></button>
@@ -26,20 +28,15 @@
     <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
     <a href="#projects"><i class="fas fa-diagram-project"></i> PROJECTS</a>
   </aside>
-
   <!-- About Me Section -->
   <section id="about" class="visible-section" tabindex="0" aria-label="About Me">
     <div class="intro-text">
-      <h1>
-        Hello,<br />
-        <span>My name is Haniyeh Parsa, and I’m an aspiring computer science student with a strong passion for learning and personal growth.</span>
-      </h1>
+      <h1>Hello,<br /><span>My name is Haniyeh Parsa, and I’m an aspiring computer science student with a strong passion for learning and personal growth.</span></h1>
       <p>Over the past year, I’ve dedicated myself to improving my skills, exploring different areas of computer science, and challenging myself through self-directed projects.</p>
       <p>I enjoy learning new things, but what drives me even more is the process of growing — pushing my limits, solving problems, and seeing real progress over time.</p>
       <p>This portfolio reflects that journey, and I’m excited to continue learning, take on new challenges, and grow even further in a university environment.</p>
     </div>
   </section>
-
   <!-- Main Layout for Other Sections -->
   <div class="main-layout">
     <div class="right-sections">
@@ -47,7 +44,6 @@
       <section id="experience" tabindex="0" aria-label="Experience">
         <h2>Experience</h2>
         <div class="experience-timeline">
-          <!-- Work Experience -->
           <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-content">
@@ -64,7 +60,6 @@
               <p>Thrived in a fast-paced café environment, handling customer interactions, orders, and support tasks. Strengthened skills in communication, multitasking, and teamwork.</p>
             </div>
           </div>
-          <!-- Volunteering -->
           <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-content">
@@ -73,7 +68,6 @@
               <p>Supported dental health initiatives by assisting with varnish applications during school visits. Promoted oral hygiene awareness among children.</p>
             </div>
           </div>
-          <!-- Personal Achievements -->
           <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-content">
@@ -92,7 +86,6 @@
               </ul>
             </div>
           </div>
-          <!-- Languages -->
           <div class="experience-item">
             <div class="timeline-dot"></div>
             <div class="experience-content">
