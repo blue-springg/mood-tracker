@@ -938,3 +938,15 @@ body.dark-mode .sidebar a.active {
     padding: 8px;
   }
 }
+
+/* Fallback for icons */
+.skill i, footer a i {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-weight: 900;
+  display: inline-block;
+  color: #2C3E50 !important; /* Fallback for light mode */
+}
+
+body.dark-mode .skill i, body.dark-mode footer a i {
+  color: #E6E6E6 !important; /* Fallback for dark mode */
+}
