@@ -1,64 +1,71 @@
-// Splash screen fade out
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.sidebar a');
+  const toggleNightMode = document.querySelector('#toggle-night-mode');
+  const hamburger = document.querySelector('#hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const splash = document.querySelector('#splash');
+
+  // Splash screen
   setTimeout(() => {
-    document.getElementById('splash').style.opacity = '0';
-    setTimeout(() => {
-      document.getElementById('splash').style.display = 'none';
-    }, 1000);
-  }, 2000);
-});
+    splash.style.display = 'none';
+  }, 3000);
 
-// Section toggle
-const navLinks = document.querySelectorAll('.sidebar a');
-const sections = document.querySelectorAll('section');
+  // Section visibility
+  const observerOptions = {
+    root: null,
+    threshold: 0.1,
+  };
 
-navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-
-    // Remove active class from all sidebar links
-    navLinks.forEach(l => l.classList.remove('active'));
-    // Add active class to the clicked link
-    link.classList.add('active');
-
-    sections.forEach(sec => {
-      if (sec.id === targetId) {
-        sec.classList.add('visible-section', 'animated-section');
-        sec.setAttribute('tabindex', '0');
-        sec.focus();
-      } else {
-        sec.classList.remove('visible-section', 'animated-section');
-        sec.setAttribute('tabindex', '-1');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible-section', 'animated-section');
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
       }
     });
+  }, observerOptions);
 
-    targetSection.scrollIntoView({ behavior: 'smooth' });
+  sections.forEach((section) => observer.observe(section));
+
+  // Smooth scrolling
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
   });
-});
 
-// Set initial active state for "About Me" since it's visible by default
-document.querySelector('.sidebar a[href="#about"]').classList.add('active');
+  // Dark mode toggle
+  toggleNightMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    toggleNightMode.querySelector('i').classList.toggle('fa-moon', !isDarkMode);
+    toggleNightMode.querySelector('i').classList.toggle('fa-sun', isDarkMode);
+    localStorage.setItem('darkMode', isDarkMode);
+  });
 
-// Night mode toggle
-const toggleBtn = document.getElementById('toggle-night-mode');
-const toggleIcon = toggleBtn.querySelector('i');
+  // Restore dark mode preference
+  if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+    toggleNightMode.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+  }
 
-// Set initial icon based on night mode state
-if (localStorage.getItem('nightMode') === 'enabled') {
-  document.body.classList.add('dark-mode');
-  toggleIcon.classList.remove('fa-sun');
-  toggleIcon.classList.add('fa-moon');
-} else {
-  toggleIcon.classList.remove('fa-moon');
-  toggleIcon.classList.add('fa-sun');
-}
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  localStorage.setItem('nightMode', isDarkMode ? 'enabled' : 'disabled');
-  toggleIcon.classList.toggle('fa-sun', !isDarkMode);
-  toggleIcon.classList.toggle('fa-moon', isDarkMode);
+  // Hamburger menu
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    const isExpanded = sidebar.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', isExpanded);
+    hamburger.querySelector('i').classList.toggle('fa-bars', !isExpanded);
+    hamburger.querySelector('i').classList.toggle('fa-times', isExpanded);
+  });
 });
