@@ -2,239 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Haniyeh Parsa, an aspiring computer science student showcasing skills, projects, and experience." />
   <title>Haniyeh Parsa | Portfolio</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Splash Screen -->
-  <div id="splash">WELCOME TO MY PORTFOLIO</div>
-  <!-- Sidebar Navigation -->
-  <aside class="sidebar">
-    <button id="toggle-night-mode" aria-label="Toggle night mode"><i class="fas fa-moon"></i></button>
-    <a href="#about" aria-current="page"><i class="fas fa-user"></i> ABOUT ME</a>
-    <a href="#experience"><i class="fas fa-briefcase"></i> EXPERIENCE</a>
-    <a href="#skills"><i class="fas fa-tools"></i> SKILLS</a>
-    <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
-    <a href="#projects"><i class="fas fa-diagram-project"></i> PROJECTS</a>
-  </aside>
-  <!-- About Me Section -->
-  <section id="about" class="visible-section" tabindex="0" aria-label="About Me">
-    <div class="intro-text">
-      <h1>Hello,<br /><span>My name is Haniyeh Parsa, and I’m an aspiring computer science student with a strong passion for learning and personal growth.</span></h1>
-      <p>Over the past year, I’ve dedicated myself to improving my skills, exploring different areas of computer science, and challenging myself through self-directed projects.</p>
-      <p>I enjoy learning new things, but what drives me even more is the process of growing — pushing my limits, solving problems, and seeing real progress over time.</p>
-      <p>This portfolio reflects that journey, and I’m excited to continue learning, take on new challenges, and grow even further in a university environment.</p>
+  <div id="splash" role="alert">WELCOME TO MY PORTFOLIO</div>
+  <header>
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="sidebar" role="navigation">
+      <button id="toggle-night-mode" aria-label="Toggle night mode"><i class="fas fa-moon"></i></button>
+      <a href="#about" aria-current="page"><i class="fas fa-user"></i> About Me</a>
+      <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+      <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+      <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
+      <a href="#projects"><i class="fas fa-diagram-project"></i> Projects</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="visible-section" tabindex="0" role="region" aria-label="About Me">
+      <div class="intro-text">
+        <h1>Hello,<br /><span>I’m Haniyeh Parsa, an aspiring computer science student passionate about learning and growth.</span></h1>
+        <p>Over the past year, I’ve honed my skills in computer science through self-directed projects, exploring various domains and embracing challenges.</p>
+        <p>My drive comes from pushing boundaries, solving complex problems, and tracking tangible progress in my work.</p>
+        <p>This portfolio showcases my journey, and I’m eager to continue learning, tackling new challenges, and contributing in a university setting.</p>
+      </div>
+    </section>
+    <div class="main-layout">
+      <div class="right-sections">
+        <section id="experience" tabindex="0" role="region" aria-label="Experience">
+          <h2>Experience</h2>
+          <div class="experience-timeline">
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="experience-content">
+                <h3>English Teacher & Private Tutor</h3>
+                <p class="experience-date">2023 – Present</p>
+                <p>Designed personalized study plans to teach English to students of varying ages and skill levels, improving their communication and writing abilities. Built confidence through tailored instruction and consistent feedback.</p>
+              </div>
+            </div>
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="experience-content">
+                <h3>Café Staff (Short-Term)</h3>
+                <p class="experience-date">Summer 2022</p>
+                <p>Excelled in a fast-paced café, managing customer interactions, orders, and support tasks. Enhanced skills in communication, multitasking, and teamwork.</p>
+              </div>
+            </div>
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="experience-content">
+                <h3>School Dental Program Volunteer</h3>
+                <p class="experience-date">2021</p>
+                <p>Assisted with dental health initiatives, including varnish applications during school visits. Promoted oral hygiene awareness among children.</p>
+              </div>
+            </div>
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="experience-content">
+                <h3>Personal Achievements & Development</h3>
+                <ul class="experience-list">
+                  <li><strong>IELTS (English):</strong> Achieved a score of 6.5 after one month of intensive study.</li>
+                  <li><strong>TOPIK (Korean):</strong> Scored 107; preparing for Level 3.</li>
+                  <li><strong>Solo Travel:</strong> Traveled independently to Turkey for the TOPIK exam, embracing cultural and personal growth.</li>
+                  <li><strong>Workshops:</strong>
+                    <ul>
+                      <li>"The History and Aesthetics of Korean Hanbok" – University of Tehran (Online)</li>
+                      <li>Microsoft AI Online Conference – Explored AI trends, ethics, and applications.</li>
+                    </ul>
+                  </li>
+                  <li><strong>Self-Directed Learning:</strong> Pursued knowledge in languages, cultures, and technology.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="experience-item">
+              <div class="timeline-dot"></div>
+              <div class="experience-content">
+                <h3>Languages</h3>
+                <ul class="experience-list">
+                  <li><strong>Persian:</strong> Native</li>
+                  <li><strong>English:</strong> Fluent (IELTS 6.5)</li>
+                  <li><strong>Korean:</strong> Intermediate (TOPIK Score: 107; preparing for Level 3)</li>
+                  <li><strong>Spanish:</strong> Beginner (A1)</li>
+                  <li><strong>Chinese (Mandarin):</strong> Beginner (A1)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="skills" tabindex="0" role="region" aria-label="Skills">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill"><i class="fab fa-python"></i><p>Python</p></div>
+            <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
+            <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+            <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
+            <div class="skill"><i class="fas fa-database"></i><p>SQL (Basic)</p></div>
+            <div class="skill"><i class="fas fa-table"></i><p>Excel</p></div>
+            <div class="skill"><i class="fas fa-robot"></i><p>AI Tools</p></div>
+          </div>
+        </section>
+        <section id="cv" tabindex="0" role="region" aria-label="CV">
+          <h2>CV <span>(Click to view certificates)</span></h2>
+          <a href="path/to/your-cv.pdf" download class="download-cv">Download Full CV</a>
+          <div class="cv-grid">
+            <div class="cv-item">
+              <h3>Machine Learning</h3>
+              <p class="cv-issuer">Stanford University (Coursera)</p>
+              <a href="certificates/Machine%20Learning.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Python for Everybody</h3>
+              <p class="cv-issuer">University of Michigan (Coursera)</p>
+              <a href="certificates/Python%20for%20Everybody.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Web Design for Everybody</h3>
+              <p class="cv-issuer">University of Michigan (Coursera)</p>
+              <a href="certificates/Web%20Design%20for%20Everybody.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Google Analytics Certification</h3>
+              <p class="cv-issuer">Google</p>
+              <a href="certificates/Google%20Analytics%20Certification.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Conversion Optimization</h3>
+              <p class="cv-issuer">Google</p>
+              <a href="certificates/Conversion%20Optimization%20Certification.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Introduction to Cybersecurity</h3>
+              <p class="cv-issuer">Cisco Networking Academy</p>
+              <a href="certificates/Introduction%20to%20Cybersecurity.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Elements of AI</h3>
+              <p class="cv-issuer">University of Helsinki</p>
+              <a href="certificates/Elements%20of%20AI.png" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Build a Free Website with WordPress</h3>
+              <p class="cv-issuer">Coursera Project</p>
+              <a href="certificates/Build%20a%20Free%20Website%20with%20WordPress.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+            <div class="cv-item">
+              <h3>Getting Started with Microsoft Excel</h3>
+              <p class="cv-issuer">Coursera Project</p>
+              <a href="certificates/Getting%20Started%20with%20Microsoft%20Excel.pdf" target="_blank" class="cv-link">View Certificate</a>
+            </div>
+          </div>
+        </section>
+        <section id="projects" tabindex="0" role="region" aria-label="Projects">
+          <h2>Projects <small>(Besides this portfolio)</small></h2>
+          <div class="projects-grid">
+            <div class="project-item">
+              <h3>Coffee To-Do List</h3>
+              <p class="project-description">A responsive to-do list app with task filtering, local storage, dark mode, and accessibility features, styled with a cozy Nescafé-inspired theme using HTML, CSS, and JavaScript.</p>
+              <div class="project-links">
+                <a href="https://bluespringg.github.io/to-do-list/" target="_blank" class="project-link">View Live Demo</a>
+                <a href="https://github.com/bluespringg/to-do-list/" target="_blank" class="project-link">View Code</a>
+              </div>
+            </div>
+            <div class="project-item">
+              <h3>Parrot’s Night Scape</h3>
+              <p class="project-description">A simple flying game created with Scratch and JavaScript.</p>
+              <div class="project-links">
+                <a href="https://scratch.mit.edu/projects/1103240101/" target="_blank" class="project-link">Play Game</a>
+              </div>
+            </div>
+            <div class="project-item">
+              <h3>The First Forest – Fan Page</h3>
+              <p class="project-description">A fan website for a Chinese drama, built using HTML and CSS, with design ideas generated using AI tools.</p>
+              <div class="project-links">
+                <a href="https://bluespringg.github.io/the-first-forest/" target="_blank" class="project-link">View Project</a>
+              </div>
+            </div>
+            <div class="project-item">
+              <h3>Mood Booster App (Python)</h3>
+              <p class="project-description">A motivational app recommending quotes and music based on mood, with code debugging assisted by AI tools.</p>
+              <div class="project-links">
+                <a href="https://colab.research.google.com/drive/1tILdMOqUn_TRbn66jHTo0HGMu5fG9KMU?usp=sharing" target="_blank" class="project-link">Try on Google Colab</a>
+                <a href="https://github.com/bluespringg/mood-booster-app" target="_blank" class="project-link">View Code</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-  </section>
-  <!-- Main Layout for Other Sections -->
-  <div class="main-layout">
-    <div class="right-sections">
-      <!-- Experience -->
-      <section id="experience" tabindex="0" aria-label="Experience">
-        <h2>Experience</h2>
-        <div class="experience-timeline">
-          <div class="experience-item">
-            <div class="timeline-dot"></div>
-            <div class="experience-content">
-              <h3>English Teacher & Private Tutor</h3>
-              <p class="experience-date">2023 – Present</p>
-              <p>Developed personalized study plans to teach English to students of diverse ages and proficiency levels, enhancing their communication and writing skills. Fostered student confidence through tailored instruction and consistent feedback.</p>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="timeline-dot"></div>
-            <div class="experience-content">
-              <h3>Café Staff (Short-Term)</h3>
-              <p class="experience-date">Summer 2022</p>
-              <p>Thrived in a fast-paced café environment, handling customer interactions, orders, and support tasks. Strengthened skills in communication, multitasking, and teamwork.</p>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="timeline-dot"></div>
-            <div class="experience-content">
-              <h3>School Dental Program Volunteer</h3>
-              <p class="experience-date">2021</p>
-              <p>Supported dental health initiatives by assisting with varnish applications during school visits. Promoted oral hygiene awareness among children.</p>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="timeline-dot"></div>
-            <div class="experience-content">
-              <h3>Personal Achievements & Development</h3>
-              <ul class="experience-list">
-                <li><strong>IELTS (English):</strong> Achieved a score of 6.5 after one month of intensive study.</li>
-                <li><strong>TOPIK (Korean):</strong> Scored 107; currently preparing for Level 3.</li>
-                <li><strong>Solo Travel:</strong> Independently traveled to Turkey for the TOPIK exam, embracing cultural and personal growth.</li>
-                <li><strong>Workshops:</strong>
-                  <ul>
-                    <li>"The History and Aesthetics of Korean Hanbok" – University of Tehran (Online)</li>
-                    <li>Microsoft AI Online Conference – Explored AI trends, ethics, and applications.</li>
-                  </ul>
-                </li>
-                <li><strong>Self-Directed Learning:</strong> Continuously pursued knowledge in languages, cultures, and technology.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="timeline-dot"></div>
-            <div class="experience-content">
-              <h3>Languages</h3>
-              <ul class="experience-list">
-                <li><strong>Persian:</strong> Native</li>
-                <li><strong>English:</strong> Fluent (IELTS 6.5)</li>
-                <li><strong>Korean:</strong> Intermediate (TOPIK Score: 107; preparing for Level 3)</li>
-                <li><strong>Spanish:</strong> Beginner (A1)</li>
-                <li><strong>Chinese (Mandarin):</strong> Beginner (A1)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Skills -->
-      <section id="skills" tabindex="0" aria-label="Skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill"><i class="fab fa-python"></i><p>Python</p></div>
-          <div class="skill"><i class="fab fa-html5"></i><p>HTML</p></div>
-          <div class="skill"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-          <div class="skill"><i class="fab fa-js"></i><p>JavaScript</p></div>
-          <div class="skill"><i class="fas fa-database"></i><p>SQL (Basic)</p></div>
-          <div class="skill"><i class="fas fa-table"></i><p>Excel</p></div>
-          <div class="skill"><i class="fas fa-robot"></i><p>AI Tools</p></div>
-        </div>
-      </section>
-      <!-- CV -->
-      <section id="cv" tabindex="0" aria-label="CV">
-        <h2>CV <span style="font-size: 0.85rem; font-weight: normal;">(Click each one to view the certificate)</span></h2>
-        <div class="cv-timeline">
-          <ol>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Machine Learning</h3>
-                <p class="cv-issuer">Stanford University (Coursera)</p>
-                <a href="certificates/Machine%20Learning.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Python for Everybody</h3>
-                <p class="cv-issuer">University of Michigan (Coursera)</p>
-                <a href="certificates/Python%20for%20Everybody.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Web Design for Everybody</h3>
-                <p class="cv-issuer">University of Michigan (Coursera)</p>
-                <a href="certificates/Web%20Design%20for%20Everybody.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Google Analytics Certification</h3>
-                <p class="cv-issuer">Google</p>
-                <a href="certificates/Google%20Analytics%20Certification.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Conversion Optimization</h3>
-                <p class="cv-issuer">Google</p>
-                <a href="certificates/Conversion%20Optimization%20Certification.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Introduction to Cybersecurity</h3>
-                <p class="cv-issuer">Cisco Networking Academy</p>
-                <a href="certificates/Introduction%20to%20Cybersecurity.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Elements of AI</h3>
-                <p class="cv-issuer">University of Helsinki</p>
-                <a href="certificates/Elements%20of%20AI.png" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Build a Free Website with WordPress</h3>
-                <p class="cv-issuer">Coursera Project</p>
-                <a href="certificates/Build%20a%20Free%20Website%20with%20WordPress.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-            <li class="cv-item">
-              <div class="timeline-dot"></div>
-              <div class="cv-content">
-                <h3>Getting Started with Microsoft Excel</h3>
-                <p class="cv-issuer">Coursera Project</p>
-                <a href="certificates/Getting%20Started%20with%20Microsoft%20Excel.pdf" target="_blank" class="cv-link">View Certificate</a>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </section>
-      <!-- Projects -->
-      <section id="projects" tabindex="0" aria-label="Projects">
-        <h2>Projects <small>(Besides this portfolio)</small></h2>
-        <div class="projects-grid">
-          <div class="project-item">
-            <h3>Coffee To-Do List</h3>
-            <p class="project-description">A responsive to-do list app with task filtering, local storage, dark mode, and accessibility features, styled with a cozy Nescafé-inspired theme using HTML, CSS, and JavaScript.</p>
-            <div class="project-links">
-              <a href="https://bluespringg.github.io/to-do-list/" target="_blank" class="project-link">View Live Demo</a>
-              <a href="https://github.com/bluespringg/to-do-list/" target="_blank" class="project-link">View the Code on GitHub</a>
-            </div>
-          </div>
-          <div class="project-item">
-            <h3>Parrot’s Night Scape</h3>
-            <p class="project-description">A simple flying game made with Scratch and JavaScript.</p>
-            <div class="project-links">
-              <a href="https://scratch.mit.edu/projects/1103240101/" target="_blank" class="project-link">Play Game</a>
-            </div>
-          </div>
-          <div class="project-item">
-            <h3>The First Forest – Fan Page</h3>
-            <p class="project-description">A fan website for a Chinese drama built using HTML and CSS, with design ideas generated using AI tools.</p>
-            <div class="project-links">
-              <a href="https://bluespringg.github.io/the-first-forest/" target="_blank" class="project-link">View Project</a>
-            </div>
-          </div>
-          <div class="project-item">
-            <h3>Mood Booster App (Python)</h3>
-            <p class="project-description">A motivational app recommending quotes and music based on mood, with code debugging assisted by AI tools.</p>
-            <div class="project-links">
-              <a href="https://colab.research.google.com/drive/1tILdMOqUn_TRbn66jHTo0HGMu5fG9KMU?usp=sharing" target="_blank" class="project-link">Try it live on Google Colab</a>
-              <a href="https://github.com/bluespringg/mood-booster-app" target="_blank" class="project-link">View the Code on GitHub</a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-  <!-- Footer -->
-  <footer>
+  </main>
+  <footer role="contentinfo">
     <a href="mailto:haniye.parsa933@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
     <a href="https://wa.me/989331202352" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     <a href="https://t.me/haniye_parsa" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
   </footer>
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
